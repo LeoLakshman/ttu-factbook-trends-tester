@@ -1,0 +1,775 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">  <!--Included lang="en" on 04/13/2026 for Accessibility by Lakshman-->
+<head id="Head1"><title>
+	Texas Tech University - TRENDS
+</title><link type="text/css" href="Stylesheets/cssJScript_v1.0.0.css" rel="Stylesheet" /><link type="text/css" href="Stylesheets/cssTrendsCustomized_V1.0.0.css" rel="Stylesheet" /><link type="text/css" href="Stylesheets/cssTTUTemplate2017_V1.0.0.css" rel="Stylesheet" /> 
+    <script type="text/javascript" src="scripts/FactJScript_v1.0.3.js"></script>
+    <script src="https://www.depts.ttu.edu/template/scripts/nav.js" type="text/javascript"></script>
+    <script src="https://www.depts.ttu.edu/template/scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var sliderOptions =
+        {
+            sliderId: "slider",
+            startSlide: 0,
+            effect: "series1",
+            effectRandom: false,
+            pauseTime: 2600,
+            transitionTime: 500,
+            slices: 12,
+            boxes: 8,
+            hoverPause: 1,
+            autoAdvance: true,
+            captionOpacity: 0.3,
+            captionEffect: "fade",
+            thumbnailsWrapperId: "thumbs",
+            m: false,
+            license: "b6t80"
+        };
+
+        var imageSlider = new mcImgSlider(sliderOptions);
+
+        function mcImgSlider(k) { for (var T = function (a) { return document.getElementById(a) }, d = "length", ab = "getElementsByTagName", C = function (e) { var a = e.childNodes, c = []; if (a) for (var b = 0, f = a[d]; b < f; b++) a[b].nodeType == 1 && c.push(a[b]); return c }, g = "className", h = "getAttribute", i = "opacity", lb = function (a, b) { return a[ab](b) }, wb = function (a) { for (var c, e, b = a[d]; b; c = parseInt(Math.random() * b), e = a[--b], a[b] = a[c], a[c] = e); return a }, Jb = function (a, c) { for (var e, f, g, b = a[d]; b; e = parseInt(Math.random() * b), f = a[--b], a[b] = a[e], a[e] = f, g = c[b], c[b] = c[e], c[e] = g); return [a, c] }, Ib = function (a, c, b) { if (a.addEventListener) a.addEventListener(c, b, false); else a.attachEvent && a.attachEvent("on" + c, b) }, Lb = document, U = window.requestAnimationFrame, db = window.cancelAnimationFrame, kb = ["webkit", "ms", "o"], cb = 0; cb < kb[d] && !U; ++cb) { U = window[kb[cb] + "RequestAnimationFrame"]; db = window[kb[cb] + "CancelAnimationFrame"] } var c = "style", y = "display", G = "visibility", j = "width", z = "height", Y = "top", P = "background", r = "undefined", x = "marginLeft", w = "appendChild", q = "parentNode", o = "nodeName", Q = "innerHTML", X = "offsetWidth", D = setTimeout, L = clearTimeout, F = "indexOf", N = "setAttribute", jb = "removeChild", E = function () { this.d = []; this.b = null }, sb = function () { var b = 50, a = navigator.userAgent, c; if ((c = a[F]("MSIE ")) != -1) b = parseInt(a.substring(c + 5, a[F](".", c))); if (a[F]("Safari") != -1 && a[F]("Chrome") == -1) b = 300; if (a[F]("Opera") != -1) b = 400; return b }, bb = sb() < 9, ib = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent), M = function (a, b) { if (a) { a.o = b; if (bb) a[c].filter = "alpha(opacity=" + b * 100 + ")"; else a[c][i] = b } }; E.a = { f: function (a) { return -Math.cos(a * Math.PI) / 2 + .5 }, g: function (a) { return a }, h: function (b, a) { return Math.pow(b, a * 2) }, j: function (b, a) { return 1 - Math.pow(1 - b, a * 2) } }; E.prototype = { k: { c: k.transitionTime, a: function () { }, b: E.a.f, d: 1 }, m: function (h, d, g, c) { for (var b = [], j = g - d, k = g > d ? 1 : -1, f = Math.ceil(60 * c.c / 1e3), a, e = 1; e <= f; e++) { a = d + c.b(e / f, c.d) * j; if (h != i) a = Math.round(a); b.push(a) } b.e = 0; return b }, n: function () { this.b == null && this.p() }, p: function () { this.q(); var a = this; this.b = U ? U(function () { a.p() }) : window.setInterval(function () { a.q() }, 15) }, q: function () { var a = this.d[d]; if (a) { for (var c = 0; c < a; c++) this.o(this.d[c]); while (a--) { var b = this.d[a]; if (b.d.e == b.d[d]) { b.c(); this.d.splice(a, 1) } } } else { if (U && db) db(this.b); else window.clearInterval(this.b); this.b = null } }, o: function (a) { if (a.d.e < a.d[d]) { var e = a.b, b = a.d[a.d.e]; if (a.b == i) { if (bb) { e = "filter"; b = "alpha(opacity=" + Math.round(b * 100) + ")" } } else b += "px"; a.a[c][e] = b; a.d.e++ } }, r: function (e, b, d, f, a) { a = this.s(this.k, a); var c = this.m(b, d, f, a); this.d.push({ a: e, b: b, d: c, c: a.a }); this.n() }, s: function (c, b) { b = b || {}; var a, d = {}; for (a in c) d[a] = typeof b[a] !== r ? b[a] : c[a]; return d } }; var l = new E, ob = function () { l.d = []; L(s); L(hb); s = hb = null }, Gb = function (b) { var a = [], c = b[d]; while (c--) a.push(String.fromCharCode(b[c])); return a.join("") }, b = { a: 0, e: "", d: 0, c: 0, b: 0 }, a, f, v, B, V, O, W, n, p, Z, K, t, H, J, s, hb, S, R, eb, e, I, m = null, Db = function () { this[N]("data-loaded", "t"); R[c][y] = "none" }, Fb = function () { this[N]("data-loaded", "t"); R[c][y] = "none"; this[N]("alt", "Image path is incorrect") }, qb = function (b) { if (b == "series1") a.a = [6, 8, 15, 2, 5, 14, 13, 3, 7, 4, 14, 1, 13, 15]; else if (b == "series2") a.a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; else a.a = b.split(/\W+/); a.a.p = k.effectRandom ? -1 : a.a[d] == 1 ? 0 : 1 }, fb = function () { a = { b: k.pauseTime, c: k.transitionTime, f: k.slices, g: k.boxes, d: k.license, h: k.hoverPause, i: k.autoAdvance, j: k.captionOpacity, k: k.captionEffect == "none" ? 0 : k.captionEffect == "fade" ? 1 : 2, l: k.thumbnailsWrapperId, Ob: function () { typeof beforeSlideChange !== r && beforeSlideChange(arguments) }, Oa: function () { typeof afterSlideChange !== r && afterSlideChange(arguments) } }; if (f) a.m = Math.ceil(f.offsetHeight * a.g / f[X]); qb(k.effect); a.n = function () { var b; if (a.a.p == -1) b = a.a[Math.floor(Math.random() * a.a[d])]; else { b = a.a[a.a.p]; a.a.p++; if (a.a.p >= a.a[d]) a.a.p = 0 } if (b < 1 || b > 17) b = 15; return b } }, zb = ["$1$2$3", "$1$2$3", "$1$24", "$1$23", "$1$22"], tb = function () { if (b.b != 2) { b.b = 1; L(s); s = null } }, pb = function () { if (b.b != 2) { b.b = 0; if (s == null && !b.c && a.i) s = D(function () { m.y(m.n(b.a + 1), 0, 1) }, a.b / 2) } }, Ab = function () { var a = 0, b = 0, c; while (a < e.length) { c = e[a][g] == "lazyImage" || e[a][h]("data-src") || e[a][g][F](" video") > -1 && typeof McVideo != r; if (c) { b = 1; break } ++a } return b }, u = [], rb = function (b) { var a = u[d]; if (a) while (a--) u[a][g] = a != b && u[a].on == 0 ? "thumb" : "thumb thumb-on" }, Cb = function (a) { return a[q][h]("data-autovideo") == "true" || a[h]("data-autovideo") == "true" }, Eb = function () { var f; if (a.l) f = T(a.l); if (f) for (var h = lb(f, "*"), e = 0; e < h[d]; e++) h[e][g] == "thumb" && u.push(h[e]); var c = u[d]; if (c) { while (c--) { u[c].on = 0; u[c].i = c; u[c].onclick = function () { m.y(this.i, Cb(this)) }; if (!ib) { u[c].onmouseover = function () { this.on = 1; this[g] = "thumb thumb-on"; a.h == 2 && tb() }; u[c].onmouseout = function () { this.on = 0; this[g] = this.i == b.a ? "thumb thumb-on" : "thumb"; a.h == 2 && pb() } } } rb(0) } return c }, mb = function (a, e, g, c, b, d, f) { D(function () { if (e && g == e - 1) { var f = {}; f.a = function () { m.o() }; for (var h in a) f[h] = a[h] } else f = a; typeof b[j] !== r && l.r(c, "width", b[j], d[j], a); typeof b[z] !== r && l.r(c, "height", b[z], d[z], a); l.r(c, i, b[i], d[i], f) }, f) }, ub = function (a) { f = a; this.Id = f.id; this.c() }, xb = function (e, c) { for (var b = [], a = 0; a < e[d]; a++) b[b[d]] = String.fromCharCode(e.charCodeAt(a) - (c ? c : 3)); return b.join("") }, yb = [/(?:.*\.)?(\w)([\w\-])[^.]*(\w)\.[^.]+$/, /.*([\w\-])\.(\w)(\w)\.[^.]+$/, /^(?:.*\.)?(\w)(\w)\.[^.]+$/, /.*([\w\-])([\w\-])\.com\.[^.]+$/, /^(\w)[^.]*(\w)$/], A = function (b) { var a = document.createElement("div"); a[g] = b; return a }, Bb = function (b, c) { var p = /\/?(SOURCE|EMBED|OBJECT|\/VIDEO|\/AUDIO)/, g = C(f), a = g[d], i; while (a--) { i = g[a]; (i[o] == "BR" || bb && p.test(i[o])) && f[jb](i) } g = f.children; var e = g[d]; if (b == "shuffle") { var h = []; for (a = 0, pos = e; a < pos; a++) h[h.length] = g[a]; if (c && c[d] == e) { var n = c[0].parentNode, j = []; for (a = 0, pos = e; a < pos; a++) j[j.length] = c[a]; var k = Jb(h, j), l = k[0], m = k[1] } else l = wb(h); for (a = 0, pos = e; a < pos; a++) { f.appendChild(l[a]); m && n.appendChild(m[a]) } b = 0 } else if (b == "random") b = Math.floor(Math.random() * e); if (b) { b = b % e; a = 0; while (1) if (a++ == b) break; else { f.appendChild(f.children[0]); c && c[0].parentNode.appendChild(c[0]) } } return f.children }; ub.prototype = { c: function () { v = f[X]; B = f.offsetHeight; var m = C(f), r = m[d]; if (m[r - 1][g] == "loading") return; if (a.l) { var l = T(a.l); l = l ? l.children : 0 } m = Bb(k.startSlide, l); this.M(a.d); var i, j; e = []; while (r--) { i = m[r]; j = 0; i[c][y] = "none"; if (i[o] == "VIDEO" || i[o] == "AUDIO") { i[c].position = "absolute"; j = A("video"); i[q].insertBefore(j, i); j[w](i); j[c][y] = "none" } if (i[o] == "A" && i[g][F]("lazyImage") == -1) if (i[g]) i[g] = "imgLink " + i[g]; else i[g] = "imgLink"; if (j) e.push(j); else e.push(i); if (i[g][F](" video") != -1) { this.A(i); this.b(i) } } e.reverse(); b.d = e[d]; a.m = Math.ceil(B * a.g / v); this.i(); var p = this.v(); if (e[b.a][o] == "IMG") b.e = e[b.a]; else b.e = lb(e[b.a], "img")[0]; if (e[b.a][o] == "A" || e[b.a][g] == "video") e[b.a][c][y] = "block"; f[c][P] = 'url("' + b.e[h]("src") + '")'; V = this.k(); var n = b.e[q], t; if (t = n.aP) { this.d(n); if (t === 1) n.aP = 0 } else if (a.i && b.d > 1) { D(function () { p.e(1) }, 0); s = D(function () { p.y(p.n(1), 0, 1) }, a.b + a.c) } if (a.h != 0 && !ib) { f.onmouseover = tb; f.onmouseout = pb } }, b: function (a) { if (typeof McVideo != r) { a.onclick = function () { return this.aP ? false : m.d(this) }; McVideo.register(a, this) } }, A: function (a) { if (typeof a.aP === r) { var b = a[h]("data-autovideo"); if (b == "true") a.aP = true; else if (b == "1") a.aP = 1; else a.aP = 0 } }, d: function (c) { L(s); s = null; var a = McVideo.play(c, v, B, this.Id); if (a || ib) b.b = 2; return false }, f: function () { S = A("navBulletsWrapper"); for (var i = [], a = 0; a < b.d; a++) i.push("<div rel='" + a + "'>" + (a + 1) + "</div>"); S[Q] = i.join(""); for (var e = C(S), a = 0; a < e[d]; a++) { if (a == b.a) e[a][g] = "active"; e[a].onclick = function () { m.y(parseInt(this[h]("rel")), 1) } } f[w](S); R = A("loading"); R[c][y] = "none"; f[w](R) }, g: function () { var d = C(S), a = b.d; while (a--) { if (a == b.a) d[a][g] = "active"; else d[a][g] = ""; if (e[a][o] == "A" || e[a][g] == "video") e[a][c][y] = a == b.a ? "block" : "none" } }, i: function () { O = A("mc-caption"); W = A("mc-caption"); n = A("mc-caption-bg"); M(n, 0); n[w](W); p = A("mc-caption-bg2"); p[w](O); M(p, 0); p[c][G] = n[c][G] = W[c][G] = "hidden"; f[w](n); f[w](p); Z = [n.offsetLeft, n.offsetTop, O[X]]; O[c][j] = W[c][j] = O[X] + "px"; this.j() }, j: function () { if (a.k == 2) { K = H = { opacity: 0, width: 0, marginLeft: Math.round(Z[2] / 2) }; t = { opacity: 1, width: Z[2], marginLeft: 0 }; J = { opacity: a.j, width: Z[2], marginLeft: 0 } } else if (a.k == 1) { K = H = { opacity: 0 }; t = { opacity: 1 }; J = { opacity: a.j } } }, k: function () { var a = b.e[h]("alt"); if (a && a.substr(0, 1) == "#") { var c = T(a.substring(1)); a = c ? c[Q] : "" } this.l(); return a }, l: function () { var e = 1; if (O[Q][d] > 1) if (!a.k) n[c][G] = p[c][G] = "hidden"; else { e = 0; var b = { c: a.c * .3, b: a.k == 1 ? E.a.f : E.a.h, d: a.k == 1 ? 0 : 2 }, f = b; f.a = function () { n[c][G] = p[c][G] = "hidden"; m.m() }; if (typeof t[x] !== r) { l.r(p, "width", t[j], K[j], b); l.r(n, "width", J[j], H[j], b); l.r(p, "marginLeft", t[x], K[x], b); l.r(n, "marginLeft", J[x], H[x], b) } if (typeof t[i] !== r) { l.r(p, i, t[i], K[i], b); l.r(n, i, J[i], H[i], f) } } e && D(function () { m.m() }, a.c * .3) }, m: function () { W[Q] = O[Q] = V; if (V) { n[c][G] = p[c][G] = "visible"; if (a.k) { var d = a.c * a.k; if (d > 1e3) d = 1e3; var b = { c: d, b: a.k == 1 ? E.a.g : E.a.j, d: a.k == 1 ? 0 : 2 }; if (typeof t[x] !== r) { l.r(p, "width", K[j], t[j], b); l.r(n, "width", H[j], J[j], b); l.r(p, "marginLeft", K[x], t[x], b); l.r(n, "marginLeft", H[x], J[x], b) } if (typeof t[i] !== r) { l.r(p, i, K[i], t[i], b); l.r(n, i, H[i], J[i], b) } } else { M(p, 1); M(n, a.j) } } }, a: function (a) { return a.replace(/(?:.*\.)?(\w)([\w\-])?[^.]*(\w)\.[^.]*$/, "$1$3$2") }, o: function () { b.c = 0; L(s); s = null; f[c][P] = 'url("' + b.e[h]("src") + '")'; var j = this, d = b.e[q]; if (typeof d.aP === r) d = 0; var i; if (d && (i = d.aP || eb && /video$/.test(d[g]))) { this.d(d); if (i === 1) d.aP = 0 } else if (!b.b && a.i) { var e = this.n(b.a + 1); this.e(e); s = D(function () { j.y(e, 0, 1) }, a.b) } a.Oa.call(this, b.a, b.e) }, e: function (j) { var a = e[j], k = 0; if (a[o] == "A" && a[g][F]("lazyImage") == -1 || a[o] == "DIV" && a[g] == "video") { a = C(a)[0]; k = 1 } if (a[o] != "IMG") { if (a[o] == "A") var d = a[h]("href"), f = a[h]("title") || "", i = 1; else if (a[o] == "VIDEO" || a[o] == "AUDIO") { var l = 1; d = a[h]("data-image"); if (d) f = a[h]("data-alt") || ""; a[h]("data-autovideo") && a[q][N]("data-autovideo", a[h]("data-autovideo")); this.A(a[q]); i = 0 } else { d = a[h]("data-src"); if (d) f = a[h]("data-alt") || ""; i = !k } if (f != null) { var b = document.createElement("img"); b[N]("data-loaded", "f"); b[N]("alt", f); b.onload = Db; b.onerror = Fb; b[N]("src", d); b[c][y] = "none"; if (l) { a[q].insertBefore(b, a); this.b(a[q], this); if (bb) { a[q][c][P] = "none"; a[q][c].cursor = "default" } } else a[q].replaceChild(b, a); if (i) e[j] = b } } }, p: function (i) { if (e[b.a][o] == "IMG") b.e = e[b.a]; else b.e = lb(e[b.a], "img")[0]; var j = b.e[h]("data-loaded"); if (j == "f") { R[c][y] = "block"; D(function () { m.p(i) }, 200); return } b.c = 1; this.g(); L(hb); V = this.k(); if (!I) { I = A("sliderInner"); f[w](I); if (sb() >= 300) f[c].borderRadius = I[c].borderRadius = "0px" } I[Q] = ""; var d = i ? i : a.n(); a.Ob.apply(this, [b.a, b.e, V, d]); rb(b.a); var g = d < 14 ? this.w(d) : this.x(); if (d < 9 || d == 15) { if (d % 2) g = g.reverse() } else if (d < 14) g = g[0]; if (d < 9) this.q(g, d); else if (d < 13) this.r(g, d); else if (d == 13) this.s(g); else if (d < 16) this.t(g, d); else this.u(g, d) }, q: function (b, e) { for (var f = 0, g = e < 7 ? { height: 0, opacity: -.4 } : { width: 0, opacity: 0 }, k = { height: B, opacity: 1 }, a = 0, h = b[d]; a < h; a++) { if (e < 3) b[a][c].bottom = "0"; else if (e < 5) b[a][c][Y] = "0"; else if (e < 7) { b[a][c][a % 2 ? "bottom" : "top"] = "0"; g[i] = -.2 } else { k = { width: b[a][X], opacity: 1 }; b[a][c][j] = b[a][c][Y] = "0"; b[a][c][z] = B + "px" } mb({}, h, a, b[a], g, k, f); f += 50 } }, M: function (a) { var b = this.a(document.domain.replace("www.", "")); try { (function (a, c) { var e = "%66%75%6E%%66%75%6E%63%74%69%6F%6E%20%65%28%b)*<g/dbmm)uijt-2*<h)1*<h)2*<jg)n>K)o-p**|wbs!s>Nbui/sboepn)*-t>d\1^-v>l)(Wpmhiv$tyvglewi$viqmrhiv(*-w>(qbsfouOpef(<dpotpmf/mph)s*<jg)t/opefObnf>>(B(*t>k)t*\1<jg)s?/9*t/tfuBuusjcvuf)(bmu(-v*<fmtf!jg)s?/8*|wbsr>epdvnfou/dsfbufUfyuOpef)v*-G>mwr5<jg)s?/86*G>Gw/jotfsuCfgpsf)r-G*sfuvso!uijt<69%6F%6E%<jg)s?/9*t/tfuBuusjcvuf)(bmupdvnf%$ou/dsfbufUfy", b = xb(e, a[d] + parseInt(a.charAt(1))).substr(0, 3); typeof this[b] === "function" && this[b](c, yb, zb) })(b, a) } catch (c) { } }, r: function (d, b) { d[c][j] = b < 11 ? "0px" : v + "px"; d[c][z] = b < 11 ? B + "px" : "0px"; M(d, 1); if (b < 11) d[c][Y] = "0"; if (b == 9) { d[c].left = "auto"; d[c].right = "0px" } else if (b > 10) d[c][b == 11 ? "bottom" : "top"] = "0"; if (b < 11) var e = 0, f = v; else { e = 0; f = B } var g = { b: E.a.j, c: a.c * 1.6, a: function () { m.o() } }; l.r(d, b < 11 ? "width" : "height", e, f, g) }, s: function (b) { b[c][Y] = "0"; b[c][j] = v + "px"; b[c][z] = B + "px"; var d = { c: a.c * 1.6, a: function () { m.o() } }; l.r(b, i, 0, 1, d) }, t: function (b) { var s = a.g * a.m, p = 0, n = 0, i = 0, g = 0, f = []; f[0] = []; for (var e = 0, o = b[d]; e < o; e++) { b[e][c][j] = b[e][c][z] = "0px"; f[i][g] = b[e]; g++; if (g == a.g) { i++; g = 0; f[i] = [] } } for (var q = { c: a.c / 1.3 }, k = 0, o = a.g * 2; k < o; k++) { for (var h = k, l = 0; l < a.m; l++) { if (h >= 0 && h < a.g) { var m = f[l][h]; mb(q, b[d], p, m, { width: 0, height: 0, opacity: 0 }, { width: m.w, height: m.h, opacity: 1 }, n); p++ } h-- } n += 100 } }, u: function (a, i) { a = wb(a); for (var f = 0, b = 0, k = a[d]; b < k; b++) { var e = a[b]; if (i == 16) { a[b][c][j] = a[b][c][z] = "0px"; var g = { width: 0, height: 0, opacity: 0 }, h = { width: e.w, height: e.h, opacity: 1 } } else { g = { opacity: 0 }; h = { opacity: 1 } } mb({}, a[d], b, e, g, h, f); f += 20 } }, v: function () { this.f(); this.e(0); return (new Function("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", function (c) { for (var b = [], a = 0, e = c[d]; a < e; a++) b[b[d]] = String.fromCharCode(c.charCodeAt(a) - 4); return b.join("") }("zev$NAjyrgxmsr,|0}-zev$eAjyrgxmsr,f-zev$gAf2glevGshiEx,4-2xsWxvmrk,-?vixyvr$g2wyfwxv,g2pirkxl15-?\u0081?vixyvr$|/}_5a/e,}_4a-/e,}_6a-?\u0081?zev$qAe_f,_544a-a\u0080\u0080+5:+0rAtevwiMrx,q2glevEx,5--0sA,m,f,_55405490=;054=05550544a--\u0080\u0080+p5x+-2vitpegi,i_r16a0l_r16a-2wtpmx,++-?zev$PAh,-?mj,q%AN,+f+/r0s--mj,%P-PAj,-?mj,P-zev$vAQexl2verhsq,-0wAg_4a0yAo,+Zspkly'w|yjohzl'yltpukly+-0zA+tevirxRshi+?mj,w2rshiReqiAA+E+-wAn,w-_4a?mj,vB2<-w2wixExxvmfyxi,+epx+0y-?ipwi$mj,vB2;-zev$uAhsgyqirx2gviexiXi|xRshi,y-0JAp_za?mj,vB2;9-JAJ_za?J_za2mrwivxFijsvi,u0J-?\u0081\u0081\u0081?vixyvr$xlmw?"))).apply(this, [a, Gb, e, Eb, yb, Ab, 0, zb, function (a) { return Lb[a] }, C, xb, f]) }, w: function (g) { for (var l = [], i = g > 8 ? v : Math.round(v / a.f), m = g > 8 ? 1 : a.f, f = 0; f < m; f++) { var k = A("mcSlc"), e = k[c]; e.left = i * f + "px"; e[j] = (f == a.f - 1 ? v - i * f : i) + "px"; e[z] = "0px"; e[P] = 'url("' + b.e[h]("src") + '") no-repeat -' + f * i + "px 0%"; if (g == 10) e[P] = 'url("' + b.e[h]("src") + '") no-repeat right top'; else if (g == 12) e[P] = 'url("' + b.e[h]("src") + '") no-repeat left bottom'; e.zIndex = 1; e.position = "absolute"; M(k, 0); I[w](k); l[l[d]] = k } return l }, x: function () { for (var l = [], k = Math.round(v / a.g), i = Math.round(B / a.m), g = 0; g < a.m; g++) for (var f = 0; f < a.g; f++) { var d = A("mcBox"), e = d[c]; e.left = k * f + "px"; e[Y] = i * g + "px"; d.w = f == a.g - 1 ? v - k * f : k; d.h = g == a.m - 1 ? B - i * g : i; e[j] = d.w + "px"; e[z] = d.h + "px"; e[P] = 'url("' + b.e[h]("src") + '") no-repeat -' + f * k + "px -" + g * i + "px"; e.zIndex = 1; e.position = "absolute"; M(d, 0); I[w](d); l.push(d) } return l }, y: function (a, i, j) { eb = i === true; this.e(a); if (a == b.a && eb && !b.c) { var h = 0; if (e[a][g] == "imgLink video") { var d = e[a][ab]("iframe"); h = !d.length } else if (e[a][g] == "video") { d = e[a][ab]("video"); if (!d.length) d = e[a][ab]("audio"); if (d.length && d[0][c][y] == "none") h = 1 } h && this.d(e[a]) } if (b.c && !i || a == b.a) return; if (b.b == 2) { b.b = 0; McVideo.stop(e[b.a]) } ob(); var f = b.a; b.a = this.n(a); if (j || !k.m) f = 0; else f = f > b.a ? "10" : "9"; this.p(f) }, n: function (a) { if (a >= b.d) a = 0; else if (a < 0) a = b.d - 1; return a }, To: function (d, c) { if (c && !a.i) return; this.y(this.n(b.a + d)) } }; var gb = function () { var a = T(k.sliderId); if (a && C(a)[d] && a.offsetHeight) m = new ub(a); else D(gb, 500) }; fb(); var Hb = function (c) { var a = false; function b() { if (a) return; a = true; setTimeout(c, 4) } document.addEventListener && document.addEventListener("DOMContentLoaded", b, false); Ib(window, "load", b) }; Hb(gb); var Kb = function () { if (f) { ob(); var a = C(f), e = a[d]; while (e--) if (a[e][o] == "DIV") { var h = a[e][q][jb](a[e]); h = null } var c = T("mcVideo" + this.Id); if (c) { c.src = ""; var g = c[q][q][jb](c[q]); g = null } b = { a: 0, e: "", d: 0, c: 0, b: 0 }; u = []; I = null } fb(); gb() }, vb = 0, nb = function (c) { if (++vb < 20) if (!m || typeof tooltip == r) D(function () { nb(c) }, 300); else for (var b = C(S), a = 0; a < b[d]; a++) b[a].onmouseover = function () { tooltip.pop(this, c(parseInt(this[h]("rel")))) } }; return { displaySlide: function (c, b, a) { m.y(c, b, a) }, next: function () { m.To(1) }, previous: function () { m.To(-1) }, getAuto: function () { return a.i }, thumbnailPreview: function (a) { vb = 0; nb(a) }, switchAuto: function () { if (a.i = !a.i) m.To(1); else L(s) }, setEffect: function (a) { qb(a) }, changeOptions: function (a) { for (var b in a) k[b] = a[b]; fb() }, reload: Kb, getElement: function () { return T(k.sliderId) } } }
+    </script>
+    <style type="text/css">
+        /* http://www.menucool.com */
+
+        #sliderFrame {
+            position: relative;
+            width: 900px;
+            margin: 0 auto; /*center-aligned*/
+        }
+
+        p > a {
+            box-shadow: 0px -2px 0px #ccc inset;
+        }
+
+        #slider, #slider div.sliderInner {
+            width: 900px;
+            height: 497px; /* Must be the same size as the slider images */
+        }
+
+        #slider {
+            background: #fff url(loading.gif) no-repeat 50% 50%;
+            position: relative;
+            margin: 0 auto; /*center-aligned*/
+            transform: translate3d(0,0,0);
+            box-shadow: 0px 1px 5px #999999;
+        }
+
+            /* image wrapper */
+            #slider a.imgLink, #slider div.video {
+                z-index: 2;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #slider .video {
+                background: transparent url(video.png) no-repeat 50% 50%;
+            }
+
+            /* Caption styles */
+            #slider div.mc-caption-bg, #slider div.mc-caption-bg2 {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                padding: 10px 0; /* 10px will increase the height.*/
+                left: 0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+                bottom: 0px; /*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+                z-index: 3;
+                overflow: hidden;
+                font-size: 0;
+            }
+
+            #slider div.mc-caption-bg {
+                /* NOTE: Its opacity is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.*/
+                background: Black; /* or any other colors such as White, or: background:none; */
+            }
+
+            #slider div.mc-caption-bg2 {
+                background: none;
+            }
+
+            #slider div.mc-caption {
+                font: bold 14px/20px Arial;
+                color: #EEE;
+                z-index: 5;
+                text-align: center;
+                background: none;
+            }
+
+                #slider div.mc-caption a {
+                    color: #FB0;
+                }
+
+                    #slider div.mc-caption a:hover {
+                        color: #DA0;
+                    }
+
+
+            /* ------ built-in navigation bullets wrapper ------*/
+            /* Note: check themes\2\js-image-slider.css to see how to hide nav bullets */
+            #slider div.navBulletsWrapper {
+                top: 320px; /* Its position is relative to the #slider */
+                text-align: center;
+                background: none;
+                position: relative;
+                z-index: 5;
+            }
+
+                /* each bullet */
+                #slider div.navBulletsWrapper div {
+                    width: 11px;
+                    height: 11px;
+                    font-size: 0;
+                    color: White; /*hide the index number in the bullet element*/
+                    background: transparent url(bullet.png) no-repeat 0 0;
+                    display: inline-block;
+                    *display: inline;
+                    zoom: 1;
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin: 0 6px; /* set distance between each bullet*/
+                }
+
+                    #slider div.navBulletsWrapper div.active {
+                        background-position: 0 -11px;
+                    }
+
+
+            /* --------- Others ------- */
+
+            #slider div.loading {
+                width: 100%;
+                height: 100%;
+                background: transparent url(loading.gif) no-repeat 50% 50%;
+                filter: alpha(opacity=60);
+                opacity: 0.6;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 9;
+            }
+
+            #slider img, #slider > b, #slider a > b {
+                position: absolute;
+                border: none;
+                display: none;
+            }
+
+            #slider div.sliderInner {
+                overflow: hidden;
+                -webkit-transform: rotate(0.000001deg); /* fixed the Chrome not crop border-radius bug*/
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            #slider > a, #slider video, #slider audio {
+                display: none;
+            }
+
+        <style type="text/css" >
+
+        #leftlist, #rightlist {
+            float: left;
+        }
+        /** Includes required local CSS and JQuery CSS **
+ ** Local CSS written and Jqeury CSS customized to TTU theme by Sravan Kumar Kasturi **/
+        html, body {
+            /*background: white !important;*/
+            min-width: 800px !important;
+        }
+
+        /********************************* SIDEBAR CSS ***********************************/
+        #accordionResizer {
+            width: 180px;
+            float: left;
+            margin-left: 5px;
+            display: inline;
+            float: left;
+            z-index: 1000;
+        }
+
+        .searchTTU h3 {
+            background: none repeat scroll 0 0 #990000;
+            margin: 0;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .quickLinks h3 {
+            padding-bottom: 2px;
+            background: url("https://www.depts.ttu.edu/shared/shared_ttumain/images/nav/nav-border-horz.gif") repeat-x scroll left bottom transparent;
+        }
+
+        #accordion {
+            font-family: Verdana,Arial,sans-serif,Tahoma;
+            font-size: 11px;
+        }
+
+            #accordion div {
+                line-height: 20px;
+                color: #CC0000;
+            }
+
+                #accordion div div {
+                    border-bottom: 1px solid #CCBBBB;
+                }
+
+                #accordion div a {
+                    color: #CC0000;
+                    text-decoration: none;
+                }
+
+        #accordioncount {
+            font-family: Verdana,Arial,sans-serif,Tahoma;
+            font-size: 11px;
+        }
+
+            #accordioncount div {
+                line-height: 20px;
+                color: #CC0000;
+            }
+
+                #accordioncount div div {
+                    border-bottom: 1px solid #CCBBBB;
+                }
+
+                #accordioncount div a {
+                    color: #CC0000;
+                    text-decoration: none;
+                }
+
+
+        /****************************** FACT BOOK Pages CSS **************************/
+
+
+        #crumbs {
+            margin-bottom: 20px !important;
+            /*height:11px !important;*/
+        }
+
+        #container {
+            background: none;
+        }
+
+        #divContainer {
+            /*margin-top:40px; */
+        }
+
+        .divRight {
+            /* vertical-align: top;*/
+            text-align: left;
+            min-width: 550px;
+            margin: 0 0 0 205px;
+            position: relative;
+            /*padding-top: 50px;*/
+            /* top:-15px; */
+        }
+
+        /****************************** Welcome Page CSS **************************/
+        .columnLeft {
+            /*	background: url(images/mark_admin.jpg) no-repeat; */
+            border: 0px solid #EEEEEE;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .deftable {
+            font-size: 15px;
+        }
+
+        #welcomeHeader {
+            font-family: Times Roman, Times New Roman, Arial, Verdana, sans-serif;
+            font-size: 25px;
+            /*font-weight:bold;*/
+            color: #CC0000;
+            letter-spacing: 0.05em;
+            line-height: 25px;
+        }
+
+        #welcomeContainer p {
+            font-family: Times Roman, Times New Roman, calibri,Verdana,Arial, sans-serif;
+            font-size: 1.5em;
+            color: #CC0000;
+            /*letter-spacing: 0.01em;*/
+            line-height: 21px;
+        }
+
+        #header3 {
+            /*padding-top: 50px;*/
+        }
+
+
+        #welcomeContainer p a {
+            color: #CC0000;
+        }
+
+        .style2 {
+            margin-bottom: 0px;
+        }
+
+        .style3 {
+            margin-top: 0;
+        }
+
+        .style4 {
+            color: #CC0000;
+        }
+
+
+        /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .myContainer {
+                width: 1054px !important;
+                max-width: 1054px !important;
+                overflow: scroll;
+            }
+
+            span#headerTitle {
+                margin-left: -10px;
+            }
+
+            body {
+                 overflow-x:scroll;
+            }
+        }
+
+        /* iPads (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+            .myContainer {
+                width: 1054px !important;
+                max-width: 1054px !important;
+                overflow: scroll;
+            }
+
+            span#headerTitle {
+                margin-left: -10px;
+            }
+
+            body {
+                 overflow-x:scroll;
+            }
+        }
+
+
+        /* Desktops and laptops ----------- */
+        @media only screen and (min-width : 1224px) {
+            .myContainer {
+                width: 1224px !important;
+                max-width: 1224px !important;
+            }
+
+            span#headerTitle {
+                margin-left: -100px;
+            }
+
+            body {
+                 overflow-x:hidden;
+            }
+
+        }
+        /* Monitors ----------- */
+        @media only screen and (min-width : 1480px) {
+            body {
+                 overflow-x: hidden;
+            }
+
+            .myContainer {
+                width: 1224px !important;
+                max-width: 1224px !important;
+            }
+
+            span#headerTitle {
+                margin-left: -100px;
+            }
+
+            #sliderFrame {
+                position: relative;
+                width: 900px;
+                margin: 0 auto; /*center-aligned*/
+            }
+
+           #slider, #slider div.sliderInner {
+                width: 900px;
+                height: 497px; /* Must be the same size as the slider images */
+           }
+        }
+        .welcome-section {
+            max-width: 1000px;
+        }
+        #main-content:focus {
+        outline: none;
+        }
+
+    </style>
+</head>
+<body style="background:white; width:100%">
+   <div class="style2" style="background:white; padding: 0px; width:100%"   >
+        
+
+<style>
+/****************************** Trends Pages CSS **************************/
+
+    
+	#crumbs
+	{
+		margin-bottom:5px !important;
+		padding-left:15px;
+		/*height:11px !important;*/
+		float: left;
+		width: 900px;
+	}
+	
+		
+</style>
+<div id="masthead" style="background: white; border-bottom: 1px solid #e6e6e6;">
+
+    <div style="padding:20px;">
+    <div style="display: inline-block; height 92px; ">
+        <a style="display: inline-block; text-decoration: none;" href="https://www.ttu.edu/">
+        <img style="width: 50px; max-width: 50px; margin-left: 10px;  position: absolute; left: 10px; top: 20px;" src="https://www.depts.ttu.edu/_ttu-template/2017/img/dbl__T.svg"  
+            alt="Texas Tech University." />
+        </a>
+    </div>
+    <div style="display: inline-block; max-width: 240px; margin-top: -3px;">
+        <h1 style="margin: 0em; width: 100%; margin-left:50px; line-height: 1em; padding: 5px; font-weight: 400; letter-spacing: 1px; font-size: 1.5em; word-wrap: break-word;
+            font-family: 'ITC Charter W01',Georgia,Garamond,serif; background:none; padding-top:6px; color: inherit">
+                <span style="display: block; width: 500px; padding:2px;" >TEXAS TECH UNIVERSITY</span> 
+                <span style="display: block; width: 500px; padding:2px;" >Institutional Research</span> 
+        </h1>
+    </div>
+    <div style="display: inline-block; width:120%;top: -33px;position: relative; overflow:hidden; text-align: center; font: 11px/15px Arial,Helvetica,Verdana,sans-serif;
+                    margin: 0;padding: 0;" >
+        <span id="headerTitle" style="font-size: 25px; font-family: Arial, Times New Roman, sans-serif; font-weight: bold; color: #CC0000; letter-spacing: 0.2em; 
+                display: block; padding: 0.2em 0;">Texas Tech University Trends</span>
+    </div>
+</div>
+</div>
+<!-- ____________________________________________________________________________________________________________________ -->
+<div id="crumbs" style="width: 97%;">
+    <!-- InstanceBeginEditable name="breadCrumb" -->
+    <a href="http://www.ttu.edu/">TTU </a>&nbsp;&nbsp;&nbsp; 
+    <a href="https://www.depts.ttu.edu/irim/">Institutional Research</a>&nbsp;&nbsp;&nbsp;
+</div>
+<!-- ____________________________________________________________________________________________________________________ -->
+<div >
+
+		<br />  
+
+</div>
+        <a name="siteNav"></a>
+        <!--<div id="globalNav"> #F2F4F3
+            <!-- you need to arrange the below #include directive properly IN THE PRODUCTION to include the menu -->
+        <!-- Remove me in DEVWEB :) #include file="../shared/shared_ttumain/ttu_template_components/Global_TopNav.xhtml"  -->
+        <!--</div>-->
+        <div id="wrapper" class="myContainer" style="margin:0px auto;">
+        <div style="margin-left:10px;margin-top:10px;">
+        
+<script type="text/javascript" src="../scripts/FactJScript_v1.0.3.js"></script>
+<form method="post" action="./" id="formId">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTg2NjkwNzI3Mw8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBZGSBoiDlx4Z6bkUPPF5879u4/A2QJaNf1XdiZk0hK6UAVg==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="58FCC5DB" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABG2X2PrHZ/5pmpDx0tg0ayhv2Pp+OPytJIGgecw83QX8MDvPh0ys27avRkttwLQiR0AbG2cckZ50o+6xyxBQQqNmTKnp2MZ0/qTouTi7ncvW3PSDrnxN0M0c4QTc1HnT53Oa8zaLLIpFRSGGLWqRrkvK79gRVh6N9ZbsIRb/XH2tCpMDGPC7WPUdxmVr54/VyfQU1HNlzZ8UUiygelPQ9BwDvuinRphg0RujELCvZmSBlylK18PQwKLj9jtNfhSJ4ZsDaxEpN1/bmDDHuCzwt2OYLh/tmpOgTPLAYpxOrA/C7PDYzce5Y/+pCyPFMZKEOWtRjdDEhI+LhlxICVRKKK6ovZy6y2gCBN6sMS+xawIKSYCy1NAiPtmiwUw9FMJMaCIYYRIK5jM5SYH5bv9LnON" />
+<div id="accordionResizer" class="panel">
+    <!-- <div class="searchTTU uni-accordion-header ui-helper-reset ui-state-default ui-corner-all">
+             you need to arrange the below #include directive properly IN THE PRODUCTION to include the menu 
+             Remove me in Devweb :) #include file="../../shared/shared_ttumain/ttu_template_components/Tier3_Search.xhtml"  
+        <h3>Quick Search: TTU</h3>
+        <form name="searchForm" action="http://www.texastech.edu/search/" method="get" id="searchForm"><input name="site" type="hidden" value="texas_tech" /><input name="client" type="hidden" value="texas_tech" /><input name="proxystylesheet" type="hidden" value="/shared/shared_ttumain/css/search_stylesheet.css" /><input name="output" type="hidden" value="xml_no_dtd" /><input name="restrict" type="hidden" value="Campus" /><input name="q" size="18" type="text" class="searchBox" alt="google search" id="q" /><input type="submit" value="Go" class="button" /><label style="display:none" for="q">Google Search Box</label> <a href="http://search.ttu.edu/" class="mini">&raquo; MORE OPTIONS &laquo;</a></form>
+     </div> -->
+     
+    
+     
+    
+     <div id="accordion" style="margin-top: 15px !important;"> 
+     
+     
+      <h3 style="background-color: #990000 !important ;margin-bottom: 25px !important;padding-bottom: 15px !important;padding-top: 15px !important;border-radius: 0px !important ;" ><a href="#" style="font-size:20px;text-align:left !important;font-weight: normal;padding-left: 30px !important;">FACULTY</a></h3>
+              <div ><div>
+             <a id="SideBar2_LinkButton12" href="javascript:__doPostBack(&#39;SideBar2$LinkButton12&#39;,&#39;&#39;)">Headcount</a></div></div>
+                       
+             
+        
+
+        
+        <h3 style="background-color: #990000 !important ;margin-bottom: 25px !important;padding-bottom: 15px !important;padding-top: 15px !important;border-radius: 0px !important ;" ><a href="#" style="font-size:20px;text-align:left !important;font-weight: normal;padding-left: 30px !important;">RESEARCH</a></h3>
+        <div><div>
+             <a id="SideBar2_LinkButton15" href="javascript:__doPostBack(&#39;SideBar2$LinkButton15&#39;,&#39;&#39;)">Expenditures</a></div></div>
+    
+            
+
+         <h3 style="background-color: #990000 !important ;margin-bottom: 25px !important;padding-bottom: 15px !important;padding-top: 15px !important;border-radius: 0px !important ;" ><a href="#" style="font-size:20px;text-align:left !important;font-weight: normal;padding-left: 30px !important;">REVENUE</a></h3>
+        <div><div>
+             <a id="SideBar2_LinkButton17" href="javascript:__doPostBack(&#39;SideBar2$LinkButton17&#39;,&#39;&#39;)">Revenues</a></div></div>
+
+           
+
+            <h3 style="background-color: #990000 !important ;margin-bottom: 35px !important;padding-bottom: 15px !important;padding-top: 15px !important;border-radius: 0px !important ;" ><a href="#" style="font-size:20px;text-align:left;font-weight: normal;padding-left: 30px !important;">STUDENTS</a></h3>
+      <div>
+            
+
+            <div>
+             <a id="SideBar2_LinkButton1" href="javascript:__doPostBack(&#39;SideBar2$LinkButton1&#39;,&#39;&#39;)">Applied / Admitted/ Enrolled</a></div>
+
+                   
+                      
+                     <div>    <a id="SideBar2_LinkButton2" href="javascript:__doPostBack(&#39;SideBar2$LinkButton2&#39;,&#39;&#39;)">Degrees</a></div>
+
+
+                       
+                          <div>    <a id="SideBar2_LinkButton3" href="javascript:__doPostBack(&#39;SideBar2$LinkButton3&#39;,&#39;&#39;)">Distance Education</a></div>
+
+                         
+                           <div>    <a id="SideBar2_LinkButton4" href="javascript:__doPostBack(&#39;SideBar2$LinkButton4&#39;,&#39;&#39;)">Enrollment</a></div>
+
+                           
+                             <div>    <a id="SideBar2_LinkButton5" href="javascript:__doPostBack(&#39;SideBar2$LinkButton5&#39;,&#39;&#39;)">Graduation Rates</a></div>
+
+                             
+                             <div>    <a id="SideBar2_LinkButton6" href="javascript:__doPostBack(&#39;SideBar2$LinkButton6&#39;,&#39;&#39;)">New First-Year Student From High School</a></div>
+
+                         
+                             <div>    <a id="SideBar2_LinkButton7" href="javascript:__doPostBack(&#39;SideBar2$LinkButton7&#39;,&#39;&#39;)">New Graduate Students</a></div>
+
+                           
+                              <div>    <a id="SideBar2_LinkButton8" href="javascript:__doPostBack(&#39;SideBar2$LinkButton8&#39;,&#39;&#39;)">New Law Students</a></div>
+
+                           
+                             <div>    <a id="SideBar2_LinkButton9" href="javascript:__doPostBack(&#39;SideBar2$LinkButton9&#39;,&#39;&#39;)">New Undergraduate Transfers</a></div>
+                           
+                             <div>    <a id="SideBar2_LinkButton10" href="javascript:__doPostBack(&#39;SideBar2$LinkButton10&#39;,&#39;&#39;)">Retention Rates</a></div>
+                        <div>    <a id="SideBar2_LinkButton11" href="javascript:__doPostBack(&#39;SideBar2$LinkButton11&#39;,&#39;&#39;)">Semester Credit Hours</a></div>
+          
+                      <div> <a id="SideBar2_LinkButton21" href="javascript:__doPostBack(&#39;SideBar2$LinkButton21&#39;,&#39;&#39;)">Veterinary School</a></div>
+
+                      <div>    <a id="SideBar2_LinkButton13" href="javascript:__doPostBack(&#39;SideBar2$LinkButton13&#39;,&#39;&#39;)">Weighted Semester Credit Hours</a></div>
+          
+
+
+      </div>
+         
+
+     </div>  
+
+
+
+    
+
+    
+	
+	
+    <div id="quicklinks" style="margin-top:12px;" class="searchTTU uni-accordion-header ui-helper-reset ui-state-default ui-corner-all">
+        <h3>Quick Links</h3>
+    </div>
+     <div style="margin-top:0px;" class="quickLinks uni-accordion-header ui-helper-reset ui-state-default ui-corner-all">
+        <h3><a href="http://techdata.irs.ttu.edu/Factbook/">Factbook</a></h3>
+       
+		<h3><a href="https://www.depts.ttu.edu/irim/HistoricalData/index.php">Historical Data</a></h3>
+		         
+		<h3><a href="https://www.depts.ttu.edu/irim/StudentProfile.php">Quick Fact Sheets</a></h3>   
+    </div>
+</div>
+</form>
+
+
+        </div>
+        <div class="divRight" style="top: 1px; left: 0px; min-width: 800px;">
+            
+            <!-- added on 04/13/2026 by Lakshman for accessibility -->
+        <main id="main-content" role="main" tabindex="-1" >
+
+            <!-- style overrided -->
+            <div id="report" style="min-width: 800px !important;">
+				<!-- Commented out on 04/13/2026 by Lakshman for accessibility -->
+             <!--<table id="testTable" style="/*width: 800px;*/ width: 100%; margin-top: 0px;*/">
+             <col width="800px" >
+  
+  <tr><td>
+                <div id="content" style="/*width: 800px;*/ width: 100%; margin-top: -15px;"> --> 
+
+                <!-- added on 04/13/2026 by Lakshman for accessibility -->
+               <div id="content" style="width: 100%; margin-top: -15px;"> 
+                    <div class="columns">
+                        <div id="sliderFrame" style="/*width: 800px;*/ width: 100%; ">
+                            <div id="slider">
+                                
+                               
+
+                                <img src="images/hero-bg1.jpg"
+     alt="Texas Tech University administration building with flags and landscaped quad in the foreground." />
+                                <img src="images/hero-bg7.jpg"
+     alt="Texas Tech University monument sign in front of campus buildings and landscaped lawn" />
+                                <img src="images/hero-bg8.jpg" 
+     alt="Stone Texas Tech University seal with fountains and campus buildings visible in the background." />
+                                <img src="images/hero-bg2.jpg"
+     alt="Rust-colored steel canopy sculpture in an outdoor plaza surrounded by trees and walkways on the Texas Tech University campus." />
+                                <img src="images/hero-bg3.jpg"
+     alt="Large white abstract metal sculpture installed outdoors in front of a modern campus building under a blue sky." />
+                                <img src="images/hero-bg4.jpg"
+     alt="Framed mural mounted on a brick wall depicting campus architecture, archways, and regional scenes." />
+                                <img src="images/hero-bg5.jpg"
+     alt="Outdoor campus plaza at night featuring illuminated curved pathways, trees, seating, and a decorative lighted screen installation." />
+                                <img src="images/hero-bg6.jpg"
+     alt="Brick monument sign reading Texas Tech University with landscaped flowers and campus buildings in the background." />
+
+                            </div>
+                        </div>
+                        
+                       
+                       
+                    </div>
+                </div>
+                <!-- Welcome Content - Fixed Semantic Issue (No more layout table) updated on 04/13/2026 By Lakshman-->
+                   
+                    <div class="welcome-section" style="width: 97%; padding-left: 20px; margin-top: -20px; margin-bottom: 15px;">
+                        <div style="display: flex; 
+                                    background: url(images/mark_admin.jpg); background-position-x: right; background-repeat-x: no-repeat;
+                                    background-size: auto 160%;
+                                    padding: 30px 320px 30px 25px;
+                                    min-height: 180px; 
+                                    align-items: flex-start;">
+
+                            <div style="flex: 1;">
+                                <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif; margin-bottom: 16px;">
+                                    The Trends website displays multiple years of data for key measures. Texas Tech tracks data for students, faculty, revenue, and research,
+                                    all of which can be displayed for the university as a whole or for individual colleges.
+                                </p>
+                                <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif; margin-bottom: 16px;">
+                                    Please select the category and sub-category of data from the menu on the left.
+                                </p>
+                                <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif; margin-bottom: 16px;">
+                                    If you need additional information not shown in this page,
+                                    please contact us via email at <a href="mailto:irim@ttu.edu"><strong>IRIM@ttu.edu</strong></a> or
+                                    call at (806) 742-2166.
+                                </p>
+                                <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif;">
+                                    Thank you and come again!
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                <!-- Commented Out on 04/13/2026 by Lakshman for accessibility 
+
+
+      </td>  </tr>
+
+               
+             
+              
+              
+              
+               
+             <tr >
+             <table style="/*width: 810px;*/width: 97%;/* margin-left: 25px; *//* margin-right: -34px; */padding-left: 20px;margin-top: -20px;">
+         <col width="800px" >
+  
+         <tr>
+	
+		
+		<td style="background: url(images/mark_admin.jpg); background-position-x: right; background-repeat-x: no-repeat;"> 
+		<div>
+                            <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif;">
+                               The Trends website displays multiple years of data for key measures.  Texas Tech tracks data for students, faculty, revenue, and research, 
+				all of which can be displayed for the university as a whole or for individual colleges.
+                              
+                            </p>
+				<br />
+                            <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif;">
+                                Please select the category and sub-category of data from the menu on the left.
+                              
+                                
+                            </p>
+                         
+				<br />
+                            
+                            <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif;">
+                                If you need additional information not shown in this page,
+                               
+                                please contact us via email at <a href="mailto:irim@ttu.edu"><strong>IRIM@ttu.edu</strong></a> or
+                                call at (806) 742-2166
+                               
+                            </p>
+                            <br />
+                            <p style="font: 12px/18px Arial,Helvetica,Verdana,sans-serif;">
+                                Thank you and come again!
+                                <br />
+                            </p>
+                            <br />
+                            <br />
+                       </div>
+                       </td>
+                       
+			
+         
+	</tr>
+         </table>
+             </tr>
+               
+
+
+
+
+
+             </table>
+                -->
+            </div>
+             
+        </div>
+
+        </div>
+
+        
+
+
+        <div class="width:100%" >  
+                
+<div id="footer" style="padding-left:30px; background-repeat-x: repeat; width: 100%; margin-top:-25px; font-size: 14px;" >
+    <a name="pageFooter"></a> <!-- InstanceBeginEditable name="Footer" style="padding-left:30px;" -->
+        <ul style="margin: 0px auto;" class="myContainer">
+		    <li>Texas Tech University, Institutional Research, Box 42017, Lubbock, TX 79409 - 2017</li>
+		    <li>Location: Administration Bldg., 2nd Floor, Room #218</li>
+		    <li>806.742.2166</li>
+		    <li><a href="mailto:irim@ttu.edu">IRIM Webmaster</a></li>
+	    </ul>
+    <div style="text-align:center;">
+        <p>
+            <a href="http://www.texashomelandsecurity.com/">Texas Homeland Security</a> |
+            <a href="http://www.ttu.edu/policy/publicInfo.php">Texas Public Information Act</a> |
+            <a href="http://www.ttu.edu/energy/">Texas Energy Conservation Report</a> |
+            <a href="http://www.ttu.edu/policy/">General Policy Information</a> | <a href="http://www.txhighereddata.org/approot/resumes/ir_launch.htm" target="_blank">
+                Online Institutional Resumes</a>
+            <a href="http://www.ttu.edu/">TTU Home</a> |
+        </p>
+        <p>
+            <a href="http://www.texastech.edu/">TTU System</a> |
+            <a href="http://www.ttuhsc.edu/">TTU Health Sciences Center</a> |    
+            <a href="http://www.angelo.edu/">Angelo State University</a> |
+            <a href="mailto:webmaster@ttu.edu?subject=Contact%20Us">Contact Us</a> |
+            <a href="http://www.ttu.edu/policy/browsers.php">Recommended Web Site Viewing 
+                Requirements</a>
+        </p>
+
+        <script language="javascript" type="text/javascript" src="https://www.depts.ttu.edu/template/scripts/dates.js"></script>
+        <p>&copy;2026 <a href="http://www.ttu.edu">Texas Tech University</a>
+            | All Rights Reserved | 
+            <script type="text/javascript" language="Javascript">
+                document.write("This page was last modified on: " + document.lastModified + "");</script>
+        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</body>
+</html>

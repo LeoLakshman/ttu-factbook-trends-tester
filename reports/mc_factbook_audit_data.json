@@ -1,0 +1,1193 @@
+{
+  "results": [
+    {
+      "title": "Enrollment - By College",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By Department",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRDEPT.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRDEPT.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRDEPT.aspx",
+      "status": "CHANGED",
+      "flags": [],
+      "changes": [
+        {
+          "type": "NUMERIC_CHANGE",
+          "entity": "MC COMS Communication Studies",
+          "metric": "UNDERGRAD",
+          "prod": 358.0,
+          "dev": 375.0,
+          "delta": 17.0,
+          "pct_change": 4.7
+        },
+        {
+          "type": "NUMERIC_CHANGE",
+          "entity": "MC COMS Communication Studies",
+          "metric": "TOTAL",
+          "prod": 393.0,
+          "dev": 410.0,
+          "delta": 17.0,
+          "pct_change": 4.3
+        }
+      ],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By Program",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "PRSC",
+          "TOTAL",
+          "",
+          "415",
+          "0",
+          "0",
+          "0",
+          "415"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "PRSC",
+          "TOTAL",
+          "",
+          "415",
+          "0",
+          "0",
+          "0",
+          "415"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By College & Classification",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRCOLLCLASS.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLCLASS.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRCOLLCLASS.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "329",
+          "338",
+          "465",
+          "614",
+          "7",
+          "0",
+          "1,753",
+          "0",
+          "9",
+          "0",
+          "263",
+          "48",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "329",
+          "338",
+          "465",
+          "614",
+          "7",
+          "0",
+          "1,753",
+          "0",
+          "9",
+          "0",
+          "263",
+          "48",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By College & Full/Part Time",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRFULLCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRFULLCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRFULLCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "1,442",
+          "311",
+          "1,753",
+          "169",
+          "151",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1,611",
+          "462",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "1,442",
+          "311",
+          "1,753",
+          "169",
+          "151",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1,611",
+          "462",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By College & Ethnicity",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRCOLLETH.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLETH.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRCOLLETH.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "1,753",
+          "320",
+          "0",
+          "0",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Enrollment - By College & Gender",
+      "category": "Enrollment",
+      "path": "/FactBook/Enrollment/ENRCOLLSEX.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLSEX.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Enrollment/ENRCOLLSEX.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "670",
+          "1,081",
+          "2",
+          "1,753",
+          "97",
+          "223",
+          "0",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "767",
+          "1,304",
+          "2",
+          "2,073"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "670",
+          "1,081",
+          "2",
+          "1,753",
+          "97",
+          "223",
+          "0",
+          "320",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "767",
+          "1,304",
+          "2",
+          "2,073"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Degrees - By College",
+      "category": "Degrees/Certificates",
+      "path": "/FactBook/Degree/DEGCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Degree/DEGCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Media & Communication",
+          "591",
+          "148",
+          "12",
+          "0",
+          "0",
+          "751"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Media & Communication",
+          "591",
+          "148",
+          "12",
+          "0",
+          "0",
+          "751"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 13
+      }
+    },
+    {
+      "title": "Degrees - By Department",
+      "category": "Degrees/Certificates",
+      "path": "/FactBook/Degree/DEGDEPT.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGDEPT.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Degree/DEGDEPT.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "591",
+          "148",
+          "12",
+          "0",
+          "0",
+          "751"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "591",
+          "148",
+          "12",
+          "0",
+          "0",
+          "751"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 13
+      }
+    },
+    {
+      "title": "Degrees - By Program",
+      "category": "Degrees/Certificates",
+      "path": "/FactBook/Degree/DEGCOLLDEPTPROG.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLLDEPTPROG.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Degree/DEGCOLLDEPTPROG.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "",
+          "591",
+          "148",
+          "12",
+          "0",
+          "751"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "",
+          "591",
+          "148",
+          "12",
+          "0",
+          "751"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 13
+      }
+    },
+    {
+      "title": "Certificates - By College",
+      "category": "Degrees/Certificates",
+      "path": "/FactBook/Degree/CERTCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Degree/CERTCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Degree/CERTCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Media & Communication",
+          "59",
+          "140",
+          "199"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Media & Communication",
+          "59",
+          "140",
+          "199"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 13
+      }
+    },
+    {
+      "title": "Course Enrollment - By College (Term)",
+      "category": "Course Enrollment",
+      "path": "/FactBook/CourseEnrollment/CENCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/CourseEnrollment/CENCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/CourseEnrollment/CENCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "12,008",
+          "793",
+          "0",
+          "0",
+          "12,801"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "12,008",
+          "793",
+          "0",
+          "0",
+          "12,801"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Course Enrollment - By Department (Term)",
+      "category": "Course Enrollment",
+      "path": "/FactBook/CourseEnrollment/CENDEPT.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/CourseEnrollment/CENDEPT.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/CourseEnrollment/CENDEPT.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "12,008",
+          "793",
+          "0",
+          "0",
+          "12,801"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "12,008",
+          "793",
+          "0",
+          "0",
+          "12,801"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Course Enrollment - By College (Fiscal Year)",
+      "category": "Course Enrollment",
+      "path": "/FactBook/CourseEnrollment/CENCOLLFY.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/CourseEnrollment/CENCOLLFY.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/CourseEnrollment/CENCOLLFY.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "26,605",
+          "2,014",
+          "0",
+          "0",
+          "28,619"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "26,605",
+          "2,014",
+          "0",
+          "0",
+          "28,619"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 7
+      }
+    },
+    {
+      "title": "Course Enrollment - By Department (Fiscal Year)",
+      "category": "Course Enrollment",
+      "path": "/FactBook/CourseEnrollment/CENDEPTFY.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/CourseEnrollment/CENDEPTFY.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/CourseEnrollment/CENDEPTFY.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "26,605",
+          "2,014",
+          "0",
+          "0",
+          "28,619"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "",
+          "26,605",
+          "2,014",
+          "0",
+          "0",
+          "28,619"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 7
+      }
+    },
+    {
+      "title": "SCH - By College (Term)",
+      "category": "Semester Credit Hours",
+      "path": "/FactBook/SCH/SCHCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/SCH/SCHCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/SCH/SCHCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "35,919",
+          "2,367",
+          "0",
+          "0",
+          "38,286"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "35,919",
+          "2,367",
+          "0",
+          "0",
+          "38,286"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "SCH - By Department (Term)",
+      "category": "Semester Credit Hours",
+      "path": "/FactBook/SCH/SCHDEPT.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/SCH/SCHDEPT.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/SCH/SCHDEPT.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "TOTAL",
+          "",
+          "35,919",
+          "2,367",
+          "0",
+          "0",
+          "38,286"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "TOTAL",
+          "",
+          "35,919",
+          "2,367",
+          "0",
+          "0",
+          "38,286"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 62
+      }
+    },
+    {
+      "title": "Faculty - By College & Gender",
+      "category": "Faculty",
+      "path": "/FactBook/Faculty/FACTCOLLGEN.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Faculty/FACTCOLLGEN.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Faculty/FACTCOLLGEN.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "61",
+          "55",
+          "116"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "61",
+          "55",
+          "116"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 21
+      }
+    },
+    {
+      "title": "Faculty - By College & Tenure",
+      "category": "Faculty",
+      "path": "/FactBook/Faculty/FACTCOLLTEN.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Faculty/FACTCOLLTEN.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Faculty/FACTCOLLTEN.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "29",
+          "13",
+          "74",
+          "116"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "29",
+          "13",
+          "74",
+          "116"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 21
+      }
+    },
+    {
+      "title": "Faculty - By Department & Tenure",
+      "category": "Faculty",
+      "path": "/FactBook/Faculty/FACTDEPTTEN.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Faculty/FACTDEPTTEN.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Faculty/FACTDEPTTEN.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Total",
+          "",
+          "29",
+          "13",
+          "74",
+          "116"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Total",
+          "",
+          "29",
+          "13",
+          "74",
+          "116"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 21
+      }
+    },
+    {
+      "title": "Graduation - 4-Year By College",
+      "category": "Graduation Rates",
+      "path": "/FactBook/Graduation/GRADCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Graduation/GRADCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Graduation/GRADCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "231",
+          "141",
+          "61.0"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "231",
+          "141",
+          "61.0"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 19
+      }
+    },
+    {
+      "title": "Graduation - 6-Year By College",
+      "category": "Graduation Rates",
+      "path": "/FactBook/Graduation/GRAD6COLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Graduation/GRAD6COLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Graduation/GRAD6COLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "283",
+          "216",
+          "76.3"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "283",
+          "216",
+          "76.3"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 18
+      }
+    },
+    {
+      "title": "Retention - One-Year By College",
+      "category": "Retention Rates",
+      "path": "/FactBook/Retention/RETCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/Retention/RETCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/Retention/RETCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "227",
+          "192",
+          "84.6"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "227",
+          "192",
+          "84.6"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 23
+      }
+    },
+    {
+      "title": "New Freshmen - By College",
+      "category": "New First-Year",
+      "path": "/FactBook/NewFreshman/NEWCOLL.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/NewFreshman/NEWCOLL.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/NewFreshman/NEWCOLL.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "259"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "259"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 36
+      }
+    },
+    {
+      "title": "New Freshmen - By Department",
+      "category": "New First-Year",
+      "path": "/FactBook/NewFreshman/NEWDEPT.aspx",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/NewFreshman/NEWDEPT.aspx",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/NewFreshman/NEWDEPT.aspx",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "TOTAL",
+          "",
+          "259"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "TOTAL",
+          "",
+          "259"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 36
+      }
+    },
+    {
+      "title": "Applied/Admitted Freshmen - By College",
+      "category": "Applied/Admitted",
+      "path": "/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=nfr",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=nfr",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=nfr",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "46",
+          "17"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "Coll of Media and Communicatn",
+          "46",
+          "17"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 35
+      }
+    },
+    {
+      "title": "Applied/Admitted Freshmen - By Department",
+      "category": "Applied/Admitted",
+      "path": "/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=nfr",
+      "prod_url": "https://techdata.irs.ttu.edu/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=nfr",
+      "dev_url": "https://devapps.irim.ttu.edu/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=nfr",
+      "status": "PASSED",
+      "flags": [],
+      "changes": [],
+      "prod_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "46",
+          "17"
+        ]
+      },
+      "dev_summary": {
+        "mc_total": [
+          "MC",
+          "",
+          "46",
+          "17"
+        ]
+      },
+      "table_comparison": [],
+      "functionality": {
+        "prod_http": 200,
+        "dev_http": 200,
+        "dev_table_present": true,
+        "dev_excel_export": true,
+        "dev_pdf_export": true,
+        "dropdown_options_count": 35
+      }
+    }
+  ],
+  "cross_flags": []
+}

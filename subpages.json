@@ -1,0 +1,777 @@
+[
+  {
+    "category": "Applied/Admitted",
+    "title": "By College",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Department",
+    "path": "/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMETHNIC.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMSEX.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLGEN.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLETH.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By High School Rank",
+    "path": "/FactBook/AppliedAdmitted/APPADMNFRRANK.aspx?level=nfr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Department",
+    "path": "/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMETHNIC.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMSEX.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLGEN.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLETH.aspx?level=ntr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLL.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Department",
+    "path": "/FactBook/AppliedAdmitted/APPADMDEPT.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMETHNIC.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMSEX.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLGEN.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMCOLLETH.aspx?level=ngr"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMETHNIC.aspx?level=law"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMSEX.aspx?level=law"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Ethnicity",
+    "path": "/FactBook/AppliedAdmitted/APPADMETHNIC.aspx?level=Vet"
+  },
+  {
+    "category": "Applied/Admitted",
+    "title": "By Gender",
+    "path": "/FactBook/AppliedAdmitted/APPADMSEX.aspx?level=Vet"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By College",
+    "path": "/FactBook/CourseEnrollment/CENCOLLFY.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Course",
+    "path": "/FactBook/CourseEnrollment/CENCourseFY.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Department",
+    "path": "/FactBook/CourseEnrollment/CENDEPTFY.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Subject",
+    "path": "/FactBook/CourseEnrollment/CENSUBFY.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By College",
+    "path": "/FactBook/CourseEnrollment/CENCOLL.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Course",
+    "path": "/FactBook/CourseEnrollment/CENCourse.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Department",
+    "path": "/FactBook/CourseEnrollment/CENDEPT.aspx"
+  },
+  {
+    "category": "Course Enrollment",
+    "title": "By Subject",
+    "path": "/FactBook/CourseEnrollment/CENSUB.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By College",
+    "path": "/FactBook/Degree/DEGCOLL.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Degree/DEGCOLLETH.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Degree/DEGCOLLSEX.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Degree Type",
+    "path": "/FactBook/Degree/DEGDEGTYPE.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Department",
+    "path": "/FactBook/Degree/DEGDEPT.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Degree/DEGETH.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Gender",
+    "path": "/FactBook/Degree/DEGSEX.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Major",
+    "path": "/FactBook/Degree/DEGMAJOR.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Program",
+    "path": "/FactBook/Degree/DEGCOLLDEPTPROG.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By College",
+    "path": "/FactBook/Degree/CERTCOLL.aspx"
+  },
+  {
+    "category": "Degrees/Certificates",
+    "title": "By Program",
+    "path": "/FactBook/Degree/CERTPROG.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By College",
+    "path": "/FactBook/Enrollment/ENRCOLL.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By College & Classification",
+    "path": "/FactBook/Enrollment/ENRCOLLCLASS.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Enrollment/ENRCOLLETH.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By College & Full/Part time",
+    "path": "/FactBook/Enrollment/ENRFULLCOLL.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By College & Gender",
+    "path": "/FactBook/Enrollment/ENRCOLLSEX.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Department",
+    "path": "/FactBook/Enrollment/ENRDEPT.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Department & Full/Part time",
+    "path": "/FactBook/Enrollment/ENRFULLDEPTCOLL.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Enrollment/ENRETHNIC.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Ethnicity & Classification",
+    "path": "/FactBook/Enrollment/ENRETHCLASS.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Ethnicity & Full/Part time",
+    "path": "/FactBook/Enrollment/ENRFULLETHINICITY.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By First Generation",
+    "path": "/FactBook/Enrollment/ENRFRSTGEN.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Full/Part time",
+    "path": "/FactBook/Enrollment/ENRFULL.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Gender",
+    "path": "/FactBook/Enrollment/ENRSEX.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Gender & Classification",
+    "path": "/FactBook/Enrollment/ENRSEXCLASS.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By International Type and Level",
+    "path": "/Factbook/Enrollment/ENRRESLEVEL.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Major",
+    "path": "/FactBook/Enrollment/ENRMAJOR.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Major & Classification",
+    "path": "/FactBook/Enrollment/ENRMAJORCLASS.aspx"
+  },
+  {
+    "category": "Enrollment",
+    "title": "By Program",
+    "path": "/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College and Gender",
+    "path": "/FactBook/Faculty/FACTCOLLGEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Faculty/FACTCOLLETH.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College & Full/Part-Time",
+    "path": "/FactBook/Faculty/FACTCOLLFULL.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College, Ethnicity & Gender",
+    "path": "/FactBook/Faculty/FACTCOLLETHGEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College, Ethnicity & Tenure",
+    "path": "/FactBook/Faculty/FACTCOLLETHTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College, Rank & Tenure",
+    "path": "/FactBook/Faculty/FACTCOLLRANKTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College & Tenure",
+    "path": "/FactBook/Faculty/FACTCOLLTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Department & Tenure",
+    "path": "/FactBook/Faculty/FACTDEPTTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Department, Ethnicity & Tenure",
+    "path": "/FactBook/Faculty/FACTCOLLDEPTETHTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/Faculty/FACTETHGEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Ethnicity & Rank",
+    "path": "/FactBook/Faculty/FACTETHRANK.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Ethnicity & Tenure",
+    "path": "/FactBook/Faculty/FACTETHTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Rank & Full/Part-Time",
+    "path": "/FactBook/Faculty/FACTRANKFULL.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Rank & Gender",
+    "path": "/FactBook/Faculty/FACTRANKGEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Rank & Tenure",
+    "path": "/FactBook/Faculty/FACTRANKTEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Tenure & Full/Part-Time",
+    "path": "/FactBook/Faculty/FACTTENFULL.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Tenure & Gender",
+    "path": "/FactBook/Faculty/FACTTENGEN.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By College",
+    "path": "/FactBook/Faculty/FACTTAGPTICOLL.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Department",
+    "path": "/FactBook/Faculty/FACTTAGPTIDEPT.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Faculty/FACTTAGPTIETH.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Full/Part-Time",
+    "path": "/FactBook/Faculty/FACTTAGPTIFULL.aspx"
+  },
+  {
+    "category": "Faculty",
+    "title": "By Gender",
+    "path": "/FactBook/Faculty/FACTTAGPTIGEN.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College",
+    "path": "/FactBook/Graduation/GRADCOLL.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Graduation/GRADCOLLGEN.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Graduation/GRADETHNIC.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Graduation/GRADCOLLETHNIC.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By Gender",
+    "path": "/FactBook/Graduation/GRADSEX.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College",
+    "path": "/FactBook/Graduation/GRAD6COLL.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Graduation/GRAD6COLLGEN.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Graduation/GRAD6ETHNIC.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Graduation/GRAD6COLLETHNIC.aspx"
+  },
+  {
+    "category": "Graduation Rates",
+    "title": "By Gender",
+    "path": "/FactBook/Graduation/GRAD6SEX.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By College",
+    "path": "/FactBook/NewFreshman/NEWCOLL.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By College & Gender",
+    "path": "/FactBook/NewFreshman/NEWCOLLSEX.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Department",
+    "path": "/FactBook/NewFreshman/NEWDEPT.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Department & Gender",
+    "path": "/FactBook/NewFreshman/NEWDEPTSEX.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Ethnicity",
+    "path": "/FactBook/NewFreshman/NEWETHNIC.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/NewFreshman/NEWCOLLETH.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/NewFreshman/NEWETHNICSEX.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Gender",
+    "path": "/FactBook/NewFreshman/NEWSEX.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Gender & Full/Part Time",
+    "path": "/FactBook/NewFreshman/NEWSEXFULLPART.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By High School Rank",
+    "path": "/FactBook/NewFreshman/ENRNFRRANK.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Major",
+    "path": "/FactBook/NewFreshman/NEWMAJOR.aspx"
+  },
+  {
+    "category": "New First-Year Student fromHigh School",
+    "title": "By Major & Gender",
+    "path": "/FactBook/NewFreshman/NEWMAJORGENDER.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By College",
+    "path": "/FactBook/NewGraduate/NEWCOLL.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By College & Gender",
+    "path": "/FactBook/NewGraduate/NEWCOLLSEX.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Department",
+    "path": "/FactBook/NewGraduate/NEWDEPT.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Department & Gender",
+    "path": "/FactBook/NewGraduate/NEWDEPTSEX.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Ethnicity",
+    "path": "/FactBook/NewGraduate/NEWETHNIC.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/NewGraduate/NEWCOLLETH.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/NewGraduate/NEWETHNICSEX.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Gender",
+    "path": "/FactBook/NewGraduate/NEWSEX.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Gender & Full/Part Time",
+    "path": "/FactBook/NewGraduate/NEWSEXFULLPART.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Major",
+    "path": "/FactBook/NewGraduate/NEWMAJOR.aspx"
+  },
+  {
+    "category": "New Graduate Students",
+    "title": "By Major & Gender",
+    "path": "/FactBook/NewGraduate/NEWMAJORGENDER.aspx"
+  },
+  {
+    "category": "New Law Students",
+    "title": "By Ethnicity",
+    "path": "/FactBook/NewLawStudents/NEWETHNIC.aspx"
+  },
+  {
+    "category": "New Law Students",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/NewLawStudents/NEWETHNICSEX.aspx"
+  },
+  {
+    "category": "New Law Students",
+    "title": "By Gender",
+    "path": "/FactBook/NewLawStudents/NEWSEX.aspx"
+  },
+  {
+    "category": "New Veterinary School Students",
+    "title": "By Ethnicity",
+    "path": "/FactBook/NewVetSchool/NEWETHNIC.aspx"
+  },
+  {
+    "category": "New Veterinary School Students",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/NewVetSchool/NEWETHNICSEX.aspx"
+  },
+  {
+    "category": "New Veterinary School Students",
+    "title": "By Gender",
+    "path": "/FactBook/NewVetSchool/NEWSEX.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By College",
+    "path": "/FactBook/NewUnderGradTr/NEWCOLL.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By College & Gender",
+    "path": "/FactBook/NewUnderGradTr/NEWCOLLSEX.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Department",
+    "path": "/FactBook/NewUnderGradTr/NEWDEPT.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Department & Gender",
+    "path": "/FactBook/NewUnderGradTr/NEWDEPTSEX.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Ethnicity",
+    "path": "/FactBook/NewUnderGradTr/NEWETHNIC.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/NewUnderGradTr/NEWCOLLETH.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Ethnicity & Gender",
+    "path": "/FactBook/NewUnderGradTr/NEWETHNICSEX.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Gender",
+    "path": "/FactBook/NewUnderGradTr/NEWSEX.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Gender & Full/Part Time",
+    "path": "/FactBook/NewUnderGradTr/NEWSEXFULLPART.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Major",
+    "path": "/FactBook/NewUnderGradTr/NEWMAJOR.aspx"
+  },
+  {
+    "category": "New Undergraduate Transfers",
+    "title": "By Major & Gender",
+    "path": "/FactBook/NewUnderGradTr/NEWMAJORGENDER.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College",
+    "path": "/FactBook/Retention/RETCOLL.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Retention/RETCOLLGEN.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Retention/RETETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Retention/RETCOLLETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Gender",
+    "path": "/FactBook/Retention/RETSEX.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College",
+    "path": "/FactBook/Retention/RET2COLL.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Retention/RET2COLLGEN.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Retention/RET2ETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Retention/RET2COLLETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Gender",
+    "path": "/FactBook/Retention/RET2SEX.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College",
+    "path": "/FactBook/Retention/RET3COLL.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Gender",
+    "path": "/FactBook/Retention/RET3COLLGEN.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Ethnicity",
+    "path": "/FactBook/Retention/RET3ETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By College & Ethnicity",
+    "path": "/FactBook/Retention/RET3COLLETHNIC.aspx"
+  },
+  {
+    "category": "Retention Rates",
+    "title": "By Gender",
+    "path": "/FactBook/Retention/RET3SEX.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By College",
+    "path": "/FactBook/SCH/SCHCOLLFY.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Course",
+    "path": "/FactBook/SCH/SCHCourseFY.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Department",
+    "path": "/FactBook/SCH/SCHDEPTFY.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Subject",
+    "path": "/FactBook/SCH/SCHSUBFY.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By College",
+    "path": "/FactBook/SCH/SCHCOLL.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Course",
+    "path": "/FactBook/SCH/SCHCourse.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Department",
+    "path": "/FactBook/SCH/SCHDEPT.aspx"
+  },
+  {
+    "category": "Semester Credit Hours",
+    "title": "By Subject",
+    "path": "/FactBook/SCH/SCHSUB.aspx"
+  }
+]

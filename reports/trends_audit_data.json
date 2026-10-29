@@ -1,0 +1,452 @@
+[
+  {
+    "title": "Faculty Headcount",
+    "category": "Faculty",
+    "target": "SideBar2$LinkButton12",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.25,
+    "semesters_tested": [
+      "TTU",
+      "AG",
+      "AR"
+    ],
+    "colleges_tested": [],
+    "checkboxes_tested": {},
+    "math_integrity": "PASS",
+    "total_historical_rows": 5,
+    "headers": [
+      "Fall",
+      "Full-Time",
+      "Part-Time",
+      "Total"
+    ]
+  },
+  {
+    "title": "Research Expenditures",
+    "category": "Research",
+    "target": "SideBar2$LinkButton15",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.13,
+    "semesters_tested": [
+      "TTU",
+      "AG",
+      "AR"
+    ],
+    "colleges_tested": [],
+    "checkboxes_tested": {},
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Year",
+      "Federal, FRE",
+      "Sponsored Projects, SPRE",
+      "Restricted Research Expenditures, RRE",
+      "Total Research Expenditures, TRE"
+    ]
+  },
+  {
+    "title": "Revenue Revenues",
+    "category": "Revenue",
+    "target": "SideBar2$LinkButton17",
+    "status": "FAULT",
+    "faults": [
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[2020] Row breakdown sum (480958339) does not match reported Total (480958337). Difference: +2. Evaluated columns: E&G Funds, HEAF, Gift, Additional Funds, Tuition and Fees, Sponsored Projects"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[2021] Row breakdown sum (489378680) does not match reported Total (489378679). Difference: +1. Evaluated columns: E&G Funds, HEAF, Gift, Additional Funds, Tuition and Fees, Sponsored Projects"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[2023] Row breakdown sum (591372931) does not match reported Total (591372929). Difference: +2. Evaluated columns: E&G Funds, HEAF, Gift, Additional Funds, Tuition and Fees, Sponsored Projects"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[2024] Row breakdown sum (631553224) does not match reported Total (631553223). Difference: +1. Evaluated columns: E&G Funds, HEAF, Gift, Additional Funds, Tuition and Fees, Sponsored Projects"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[2025] Row breakdown sum (647228907) does not match reported Total (647228906). Difference: +1. Evaluated columns: E&G Funds, HEAF, Gift, Additional Funds, Tuition and Fees, Sponsored Projects"
+      }
+    ],
+    "load_time_sec": 0.18,
+    "semesters_tested": [
+      "TTU",
+      "AG",
+      "AR"
+    ],
+    "colleges_tested": [],
+    "checkboxes_tested": {},
+    "math_integrity": "FAIL",
+    "total_historical_rows": 6,
+    "headers": [
+      "Year",
+      "E&G Funds",
+      "HEAF",
+      "Gift",
+      "Additional Funds",
+      "Tuition and Fees",
+      "Sponsored Projects",
+      "Total"
+    ]
+  },
+  {
+    "title": "Applied / Admitted / Enrolled",
+    "category": "Students",
+    "target": "SideBar2$LinkButton1",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.78,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Year",
+      "Total Applied",
+      "Total Admitted",
+      "Total Enrolled"
+    ]
+  },
+  {
+    "title": "Degrees",
+    "category": "Students",
+    "target": "SideBar2$LinkButton2",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.27,
+    "semesters_tested": [
+      "FY",
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fiscal Year",
+      "Bachelors",
+      "Masters",
+      "Doctoral",
+      "Law",
+      "Vet School",
+      "Total"
+    ]
+  },
+  {
+    "title": "Distance Education",
+    "category": "Students",
+    "target": "SideBar2$LinkButton3",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 3.67,
+    "semesters_tested": [
+      "FY"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fiscal Year",
+      "Graduate",
+      "Undergraduate",
+      "Law",
+      "Vet School",
+      "Total"
+    ]
+  },
+  {
+    "title": "Enrollment",
+    "category": "Students",
+    "target": "SideBar2$LinkButton4",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 1.34,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "Graduate",
+      "Undergraduate",
+      "Law",
+      "Vet School",
+      "Total"
+    ]
+  },
+  {
+    "title": "Graduation Rates",
+    "category": "Students",
+    "target": "SideBar2$LinkButton5",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 1.96,
+    "semesters_tested": [],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS",
+      "transferIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 7,
+    "headers": [
+      "Entering Fall",
+      "Cohort*",
+      "Total Graduated in 4-Yrs",
+      "% Graduated in 4-Yrs"
+    ]
+  },
+  {
+    "title": "New First-Year Student From High School",
+    "category": "Students",
+    "target": "SideBar2$LinkButton6",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 1.08,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "Total Enrolled"
+    ]
+  },
+  {
+    "title": "New Graduate Students",
+    "category": "Students",
+    "target": "SideBar2$LinkButton7",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 1.05,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "Total Enrolled"
+    ]
+  },
+  {
+    "title": "New Law Students",
+    "category": "Students",
+    "target": "SideBar2$LinkButton8",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.47,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "AI",
+      "AS",
+      "B",
+      "HI",
+      "M",
+      "HP",
+      "NR",
+      "U",
+      "WH",
+      "Total"
+    ]
+  },
+  {
+    "title": "New Undergraduate Transfers",
+    "category": "Students",
+    "target": "SideBar2$LinkButton9",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.97,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "Total Enrolled"
+    ]
+  },
+  {
+    "title": "Retention Rates",
+    "category": "Students",
+    "target": "SideBar2$LinkButton10",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 3.42,
+    "semesters_tested": [],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS",
+      "transferIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 7,
+    "headers": [
+      "Entering Fall",
+      "Cohort*",
+      "Total Retained in 1-Yr",
+      "% Retained in 1-Yr"
+    ]
+  },
+  {
+    "title": "Semester Credit Hours",
+    "category": "Students",
+    "target": "SideBar2$LinkButton11",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 9.91,
+    "semesters_tested": [
+      "FY",
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fiscal Year",
+      "Graduate",
+      "Undergraduate",
+      "Law",
+      "Vet School",
+      "Total"
+    ]
+  },
+  {
+    "title": "Veterinary School",
+    "category": "Students",
+    "target": "SideBar2$LinkButton21",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.44,
+    "semesters_tested": [
+      "27",
+      "57"
+    ],
+    "colleges_tested": [],
+    "checkboxes_tested": {
+      "ForeignIndicator": "PASS"
+    },
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fall",
+      "AI",
+      "AS",
+      "B",
+      "HI",
+      "M",
+      "HP",
+      "NR",
+      "U",
+      "WH",
+      "Total"
+    ]
+  },
+  {
+    "title": "Weighted Semester Credit Hours",
+    "category": "Students",
+    "target": "SideBar2$LinkButton13",
+    "status": "HEALTHY",
+    "faults": [],
+    "load_time_sec": 0.12,
+    "semesters_tested": [
+      "FY",
+      "27",
+      "57"
+    ],
+    "colleges_tested": [
+      "MC"
+    ],
+    "checkboxes_tested": {},
+    "math_integrity": "PASS",
+    "total_historical_rows": 6,
+    "headers": [
+      "Fiscal Year",
+      "LOWER DIV",
+      "UPPER DIV",
+      "MASTERS",
+      "DOCTORAL",
+      "PROFESSIONAL",
+      "TOTAL WSCH"
+    ]
+  }
+]

@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTU FactBook Production Functionality & Faults Audit</title>
+    <style>
+        :root {
+            --ttu-red: #CC0000;
+            --ttu-black: #111111;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #2b2f38;
+            --text-muted: #6c757d;
+            --border-color: #e2e8f0;
+            --pass-color: #10b981;
+            --warn-color: #f59e0b;
+            --danger-color: #ef4444;
+            --info-color: #3b82f6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 24px;
+        }
+        .header {
+            background: linear-gradient(135deg, #111111 0%, #300000 100%);
+            color: white;
+            padding: 28px 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 6px solid var(--ttu-red);
+        }
+        .header h1 { font-size: 24px; font-weight: 700; }
+        .header .subtitle { color: #d1d5db; font-size: 14px; margin-top: 6px; }
+        .header-meta { text-align: right; font-size: 13px; color: #9ca3af; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .kpi-card {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .kpi-card .kpi-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+        .kpi-card .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .kpi-card.pass .kpi-value { color: var(--pass-color); }
+        .kpi-card.fault .kpi-value { color: var(--warn-color); }
+        .kpi-card.crit .kpi-value { color: var(--danger-color); }
+
+        .control-bar {
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn {
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:hover { background: #f1f5f9; }
+        .btn.active {
+            background: var(--ttu-red);
+            color: white;
+            border-color: var(--ttu-red);
+        }
+        .search-box input {
+            padding: 8px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 13px;
+            width: 280px;
+        }
+
+        /* Table */
+        .table-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        table.matrix {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+        table.matrix th, table.matrix td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        table.matrix th {
+            background: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+        }
+        table.matrix tr:hover { background: #fafbfc; }
+
+        .badge-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-status.PASS { background: #ecfdf5; color: #047857; }
+        .badge-status.FAIL { background: #fef2f2; color: #b91c1c; font-weight: bold; }
+        .badge-status.NA { background: #f1f5f9; color: #94a3b8; }
+
+        .overall-pill {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .overall-pill.HEALTHY { background: #ecfdf5; color: #047857; }
+        .overall-pill.FAULT { background: #fffbeb; color: #b45309; }
+        .overall-pill.CRITICAL { background: #fef2f2; color: #b91c1c; }
+
+        .fault-desc {
+            color: #b91c1c;
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        a.page-link {
+            color: var(--ttu-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.page-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>Texas Tech University - FactBook Production Testing</h1>
+            <div class="subtitle">Faults & Functionality Audit: Page Loads, Export to Excel/PDF, Foreign Campus & Bachelor's Checkboxes, Math Integrity</div>
+        </div>
+        <div class="header-meta">
+            <div><strong>Environment:</strong> PRODUCTION (techdata.irs.ttu.edu)</div>
+            <div><strong>Timestamp:</strong> 2026-10-29 10:14:50</div>
+        </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">Pages Tested</div>
+            <div class="kpi-value">22</div>
+        </div>
+        <div class="kpi-card pass">
+            <div class="kpi-label">100% Healthy Pages</div>
+            <div class="kpi-value">21</div>
+        </div>
+        <div class="kpi-card fault">
+            <div class="kpi-label">Pages with Faults</div>
+            <div class="kpi-value">1</div>
+        </div>
+        <div class="kpi-card crit">
+            <div class="kpi-label">Critical / Server Crashes</div>
+            <div class="kpi-value">0</div>
+        </div>
+        <div class="kpi-card pass">
+            <div class="kpi-label">Excel Export Success</div>
+            <div class="kpi-value">22/22</div>
+        </div>
+        <div class="kpi-card pass">
+            <div class="kpi-label">PDF Export Success</div>
+            <div class="kpi-value">22/22</div>
+        </div>
+        <div class="kpi-card pass">
+            <div class="kpi-label">Foreign Campus Box</div>
+            <div class="kpi-value">22/22</div>
+        </div>
+        <div class="kpi-card pass">
+            <div class="kpi-label">Bachelor's Degree Box</div>
+            <div class="kpi-value">6/6</div>
+        </div>
+    </div>
+
+    <!-- Control Bar -->
+    <div class="control-bar">
+        <div class="filter-buttons">
+            <button class="btn active" onclick="setFilter('ALL')">All Pages (22)</button>
+            <button class="btn" onclick="setFilter('FAULT')">🚨 Faults (1)</button>
+            <button class="btn" onclick="setFilter('HEALTHY')">✅ Healthy (21)</button>
+            <button class="btn" onclick="setFilter('EXCEL_FAIL')">Excel Fails</button>
+            <button class="btn" onclick="setFilter('PDF_FAIL')">PDF Fails</button>
+            <button class="btn" onclick="setFilter('CB_FAIL')">Checkbox Fails</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search page name, category, or path..." onkeyup="renderTable()">
+        </div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="table-card">
+        <table class="matrix" id="matrixTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Subpage Title</th>
+                    <th>Status</th>
+                    <th>Page Load (GET)</th>
+                    <th>Data Grid</th>
+                    <th>Export Excel</th>
+                    <th>Export PDF</th>
+                    <th>Foreign Campus</th>
+                    <th>Bachelor Degree</th>
+                    <th>Math Integrity</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const results = [
+  {
+    "title": "By College & Ethnicity",
+    "category": "Degrees/Certificates",
+    "path": "/FactBook/Degree/DEGCOLLETH.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLLETH.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.45,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 139,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 8235,
+        "filename": "attachment;  filename=DEGCOLLETH_FY 2025-2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 11227,
+        "filename": "attachment;filename=DEGCOLLETH_FY 2025-2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Gender",
+    "category": "Degrees/Certificates",
+    "path": "/FactBook/Degree/DEGCOLLSEX.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLLSEX.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.8,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 64,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 5493,
+        "filename": "attachment;  filename=DEGCOLLSEX_FY 2025-2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 5304,
+        "filename": "attachment;filename=DEGCOLLSEX_FY 2025-2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Program",
+    "category": "Degrees/Certificates",
+    "path": "/FactBook/Degree/DEGCOLLDEPTPROG.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLLDEPTPROG.aspx",
+    "status": "FAULT",
+    "faults": [
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[VS VET VS-DVM-VMED] Row breakdown sum (0) does not match reported Total (80). Difference: -80. Evaluated columns: BACHELORS, MASTERS, DOCTORAL, LAW"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[VS VET ] Row breakdown sum (0) does not match reported Total (80). Difference: -80. Evaluated columns: BACHELORS, MASTERS, DOCTORAL, LAW"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[VS  ] Row breakdown sum (0) does not match reported Total (80). Difference: -80. Evaluated columns: BACHELORS, MASTERS, DOCTORAL, LAW"
+      },
+      {
+        "severity": "HIGH",
+        "component": "MATH_INTEGRITY",
+        "message": "[TOTAL  ] Row breakdown sum (10376) does not match reported Total (10456). Difference: -80. Evaluated columns: BACHELORS, MASTERS, DOCTORAL, LAW"
+      }
+    ],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.74,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 435,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 19650,
+        "filename": "attachment;  filename=DEGCOLLDEPTPROG_FY 2025-2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 36973,
+        "filename": "attachment;filename=DEGCOLLDEPTPROG_FY 2025-2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "FAIL",
+        "errors": 4
+      }
+    }
+  },
+  {
+    "title": "By College",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRCOLL.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLL.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.43,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 16,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 4171,
+        "filename": "attachment;  filename=ENRCOLL_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 2514,
+        "filename": "attachment;filename=ENRCOLL_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Ethnicity",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRCOLLETH.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLETH.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.98,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 146,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 7989,
+        "filename": "attachment;  filename=ENRCOLLETH_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 9426,
+        "filename": "attachment;filename=ENRCOLLETH_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Gender",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRCOLLSEX.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLSEX.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 5.86,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 17,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 5269,
+        "filename": "attachment;  filename=ENRCOLLSEX_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 5565,
+        "filename": "attachment;filename=ENRCOLLSEX_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Classification",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRCOLLCLASS.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLCLASS.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 3.07,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 17,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 5199,
+        "filename": "attachment;  filename=ENRCOLLCLASS_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 5861,
+        "filename": "attachment;filename=ENRCOLLCLASS_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRDEPT.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRDEPT.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.89,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 108,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 8343,
+        "filename": "attachment;  filename=ENRDEPT_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 9383,
+        "filename": "attachment;filename=ENRDEPT_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College",
+    "category": "Degrees/Certificates",
+    "path": "/FactBook/Degree/DEGCOLL.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Degree/DEGCOLL.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 6.46,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 16,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 4319,
+        "filename": "attachment;  filename=DEGCOLL_FY 2025-2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 2751,
+        "filename": "attachment;filename=DEGCOLL_FY 2025-2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department",
+    "category": "New First-Year Student fromHigh School",
+    "path": "/FactBook/NewFreshman/NEWDEPT.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewFreshman/NEWDEPT.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 0.92,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 78,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 5552,
+        "filename": "attachment;  filename=NEWDEPT_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 4510,
+        "filename": "attachment;filename=NEWDEPT_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department & Gender",
+    "category": "New First-Year Student fromHigh School",
+    "path": "/FactBook/NewFreshman/NEWDEPTSEX.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewFreshman/NEWDEPTSEX.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 1.38,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 78,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 6642,
+        "filename": "attachment;  filename=NEWDEPTSEX_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 6172,
+        "filename": "attachment;filename=NEWDEPTSEX_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department",
+    "category": "New Graduate Students",
+    "path": "/FactBook/NewGraduate/NEWDEPT.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewGraduate/NEWDEPT.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 0.94,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 85,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 7039,
+        "filename": "attachment;  filename=NEWDEPT_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 7732,
+        "filename": "attachment;filename=NEWDEPT_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department & Gender",
+    "category": "New Graduate Students",
+    "path": "/FactBook/NewGraduate/NEWDEPTSEX.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewGraduate/NEWDEPTSEX.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 0.61,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 85,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 6799,
+        "filename": "attachment;  filename=NEWDEPTSEX_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 6417,
+        "filename": "attachment;filename=NEWDEPTSEX_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Program",
+    "category": "Enrollment",
+    "path": "/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Enrollment/ENRCOLLDEPTPROG.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 3.36,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 487,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 22922,
+        "filename": "attachment;  filename=ENRCOLLDEPTPROG_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 35166,
+        "filename": "attachment;filename=ENRCOLLDEPTPROG_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department & Gender",
+    "category": "New Undergraduate Transfers",
+    "path": "/FactBook/NewUnderGradTr/NEWDEPTSEX.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewUnderGradTr/NEWDEPTSEX.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 0.77,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 76,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 6511,
+        "filename": "attachment;  filename=NEWDEPTSEX_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 5873,
+        "filename": "attachment;filename=NEWDEPTSEX_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By Department",
+    "category": "New Undergraduate Transfers",
+    "path": "/FactBook/NewUnderGradTr/NEWDEPT.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/NewUnderGradTr/NEWDEPT.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 0.9,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 76,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 7178,
+        "filename": "attachment;  filename=NEWDEPT_Fall 2026.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 7154,
+        "filename": "attachment;filename=NEWDEPT_Fall 2026.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "N/A",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College",
+    "category": "Graduation Rates",
+    "path": "/FactBook/Graduation/GRADCOLL.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Graduation/GRADCOLL.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 10.04,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 13,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 3841,
+        "filename": "attachment;  filename=GRADCOLL_Fall 2022.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 2163,
+        "filename": "attachment;filename=GRADCOLL_Fall 2022.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Gender",
+    "category": "Graduation Rates",
+    "path": "/FactBook/Graduation/GRADCOLLGEN.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Graduation/GRADCOLLGEN.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 10.4,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 38,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 4804,
+        "filename": "attachment;  filename=GRADCOLLGEN_Fall 2022.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 3505,
+        "filename": "attachment;filename=GRADCOLLGEN_Fall 2022.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Ethnicity",
+    "category": "Graduation Rates",
+    "path": "/FactBook/Graduation/GRADCOLLETHNIC.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Graduation/GRADCOLLETHNIC.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 8.63,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 95,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 6615,
+        "filename": "attachment;  filename=GRADCOLLETHNIC_Fall 2022.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 7201,
+        "filename": "attachment;filename=GRADCOLLETHNIC_Fall 2022.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College",
+    "category": "Retention Rates",
+    "path": "/FactBook/Retention/RETCOLL.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Retention/RETCOLL.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 3.09,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 13,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 3822,
+        "filename": "attachment;  filename=RETCOLL_Fall 2025.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 2171,
+        "filename": "attachment;filename=RETCOLL_Fall 2025.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Gender",
+    "category": "Retention Rates",
+    "path": "/FactBook/Retention/RETCOLLGEN.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Retention/RETCOLLGEN.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.65,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 38,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 4813,
+        "filename": "attachment;  filename=RETCOLLGEN_Fall 2025.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 3504,
+        "filename": "attachment;filename=RETCOLLGEN_Fall 2025.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  },
+  {
+    "title": "By College & Ethnicity",
+    "category": "Retention Rates",
+    "path": "/FactBook/Retention/RETCOLLETHNIC.aspx",
+    "url": "https://techdata.irs.ttu.edu/FactBook/Retention/RETCOLLETHNIC.aspx",
+    "status": "HEALTHY",
+    "faults": [],
+    "tests": {
+      "page_load": {
+        "status": "PASS",
+        "time_sec": 2.43,
+        "http": 200
+      },
+      "grid_render": {
+        "status": "PASS",
+        "row_count": 93,
+        "mc_found": true
+      },
+      "excel_export": {
+        "status": "PASS",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size_bytes": 6540,
+        "filename": "attachment;  filename=RETCOLLETHNIC_Fall 2025.xlsx"
+      },
+      "pdf_export": {
+        "status": "PASS",
+        "mime": "application/pdf; charset=utf-8",
+        "size_bytes": 7077,
+        "filename": "attachment;filename=RETCOLLETHNIC_Fall 2025.pdf"
+      },
+      "foreign_campus": {
+        "status": "PASS",
+        "delta": null
+      },
+      "bachelor_degree": {
+        "status": "PASS",
+        "delta": null
+      },
+      "math_integrity": {
+        "status": "PASS",
+        "errors": 0
+      }
+    }
+  }
+];
+        let currentFilter = 'ALL';
+
+        function badge(status) {
+            if (status === 'PASS') return `<span class="badge-status PASS">PASS</span>`;
+            if (status === 'FAIL') return `<span class="badge-status FAIL">FAIL</span>`;
+            return `<span class="badge-status NA">N/A</span>`;
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            tbody.innerHTML = '';
+
+            results.forEach(r => {
+                // Filter logic
+                if (currentFilter === 'FAULT' && r.status === 'HEALTHY') return;
+                if (currentFilter === 'HEALTHY' && r.status !== 'HEALTHY') return;
+                if (currentFilter === 'EXCEL_FAIL' && r.tests.excel_export.status !== 'FAIL') return;
+                if (currentFilter === 'PDF_FAIL' && r.tests.pdf_export.status !== 'FAIL') return;
+                if (currentFilter === 'CB_FAIL' && r.tests.foreign_campus.status !== 'FAIL' && r.tests.bachelor_degree.status !== 'FAIL') return;
+
+                const textToSearch = `${r.category} ${r.title} ${r.path} ${JSON.stringify(r.faults || [])}`.toLowerCase();
+                if (search && !textToSearch.includes(search)) return;
+
+                const tr = document.createElement('tr');
+                let faultsHtml = '';
+                if (r.faults && r.faults.length > 0) {
+                    faultsHtml = r.faults.map(f => `<div class="fault-desc">⚠️ [${f.component}] ${f.message}</div>`).join('');
+                }
+
+                tr.innerHTML = `
+                    <td><span style="font-weight:600; color:var(--text-muted); font-size:11px;">${r.category}</span></td>
+                    <td>
+                        <a class="page-link" href="${r.url}" target="_blank">${r.title}</a>
+                        <div style="font-size:11px; color:var(--text-muted);">${r.path}</div>
+                        ${faultsHtml}
+                    </td>
+                    <td><span class="overall-pill ${r.status}">${r.status}</span></td>
+                    <td>${r.tests.page_load.status === 'PASS' ? `<span class="badge-status PASS">${r.tests.page_load.time_sec}s</span>` : `<span class="badge-status FAIL">HTTP ${r.tests.page_load.http}</span>`}</td>
+                    <td>${r.tests.grid_render.status === 'PASS' ? `<span class="badge-status PASS">${r.tests.grid_render.row_count} rows</span>` : badge(r.tests.grid_render.status)}</td>
+                    <td>${badge(r.tests.excel_export.status)}</td>
+                    <td>${badge(r.tests.pdf_export.status)}</td>
+                    <td>${badge(r.tests.foreign_campus.status)}</td>
+                    <td>${badge(r.tests.bachelor_degree.status)}</td>
+                    <td>${badge(r.tests.math_integrity.status)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            if (tbody.children.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; padding:32px; color:var(--text-muted);">No pages found matching filter.</td></tr>`;
+            }
+        }
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-buttons .btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            renderTable();
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>
