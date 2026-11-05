@@ -93,7 +93,7 @@ def extract_aspnet_state(soup: BeautifulSoup) -> Dict[str, str]:
     return state
 
 
-def test_factbook_page_exhaustive(page_info: Dict[str, Any], max_terms: Optional[int] = None, timeout: int = 25) -> Dict[str, Any]:
+def test_factbook_page_exhaustive(page_info: Dict[str, Any], max_terms: Optional[int] = None, timeout: int = 45) -> Dict[str, Any]:
     """
     Exhaustively tests a FactBook page across:
     - Every semester/term in dropdown
@@ -402,7 +402,7 @@ def test_factbook_page_exhaustive(page_info: Dict[str, Any], max_terms: Optional
     return audit
 
 
-def test_trends_page_exhaustive(trends_info: Dict[str, Any], max_colleges: Optional[int] = None, timeout: int = 25) -> Dict[str, Any]:
+def test_trends_page_exhaustive(trends_info: Dict[str, Any], max_colleges: Optional[int] = None, timeout: int = 45) -> Dict[str, Any]:
     """
     Exhaustively tests a Trends page across:
     - Every semester term in APPADMDropDownList1

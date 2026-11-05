@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ENRFULLCOLL_summer_math",
+    "title": "Summer Student Headcount Full/Part Time Zeroed",
+    "component": "MATH_INTEGRITY",
+    "page": "Enrollment by College & Full/Part Time (ENRFULLCOLL.aspx)",
+    "message": "Across Summer terms (20267, 20257, 20247...), Full=0 and Part=0 while Total > 0 due to Summer registration classification.",
+    "reason": "Known institutional Banner data reporting defect; summer student enrollment is not divided into full/part time brackets in this view.",
+    "status": "EXCEPTION",
+    "author": "System QA",
+    "created_at": "2026-10-29 11:20:00"
+  },
+  {
+    "id": "DEGCOLLDEPTPROG_vet_header",
+    "title": "Degrees Report Omitted 'VET SCHOOL' Column Header",
+    "component": "MISSING_HEADER",
+    "page": "Degrees - By College, Dept & Program (DEGCOLLDEPTPROG.aspx)",
+    "message": "Header omits VET SCHOOL label, causing 80 DVM degrees to render under blank column header and fail horizontal row sum.",
+    "reason": "Known template layout omission for the new School of Veterinary Medicine column in legacy ASP.NET GridView definition.",
+    "status": "EXCEPTION",
+    "author": "System QA",
+    "created_at": "2026-10-29 11:20:00"
+  },
+  {
+    "id": "TRENDS_buttonExport_tranE1",
+    "title": "Trends Universal Chart Export Button ReferenceError",
+    "component": "CHART_EXPORT_JS",
+    "page": "All Trends Pages (21 reports)",
+    "message": "buttonExport getSVGText() line 178 comments out tranE1, but line 187 calls tranE1.innerText.trim(), throwing ReferenceError.",
+    "reason": "Client-side JavaScript defect acknowledged in IRIM developer backlog; scheduled for update in upcoming release.",
+    "status": "EXCEPTION",
+    "author": "System QA",
+    "created_at": "2026-10-29 11:20:00"
+  },
+  {
+    "id": "TRENDS_revsrc_rounding",
+    "title": "Revenue Source Floating-Point Rounding Variance",
+    "component": "ROUNDING_VARIANCE",
+    "page": "Revenue - By Source (REVSRC.aspx)",
+    "message": "Sum of individual revenue fund components differs by $1-$2 from reported Total column for FY 2020-2025.",
+    "reason": "Accepted rounding tolerance due to unrounded IEEE-754 floating-point additions in institutional ledger rollup.",
+    "status": "EXCEPTION",
+    "author": "System QA",
+    "created_at": "2026-10-29 11:20:00"
+  }
+]
