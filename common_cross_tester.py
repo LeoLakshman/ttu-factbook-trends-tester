@@ -743,7 +743,7 @@ def cross_verify_graduation(timeout: int = 45) -> Dict[str, Any]:
     return result
 
 
-def run_common_cross_suite(timeout: int = 45) -> Dict[str, Any]:
+def run_common_cross_suite(timeout: int = 45, progress_callback: Optional[Any] = None) -> Dict[str, Any]:
     """
     Executes cross-verification across all common reports.
     """
@@ -751,9 +751,13 @@ def run_common_cross_suite(timeout: int = 45) -> Dict[str, Any]:
     results = []
     
     # 1. Applied & Admitted First-Year
+    if progress_callback:
+        progress_callback(0, 4, "Cross-checking 1/4: Applied & Admitted First-Year (level=nfr)...")
     try:
         r1 = cross_verify_applied_admitted(timeout=timeout)
         results.append(r1)
+        if progress_callback:
+            progress_callback(1, 4, f"Verified 1/4: Applied & Admitted ({r1.get('matching_cells_count', 0)}/{r1.get('total_cells_verified', 0)} cells matched)")
     except Exception as e:
         results.append({
             "id": "applied_admitted_nfr",
@@ -764,9 +768,13 @@ def run_common_cross_suite(timeout: int = 45) -> Dict[str, Any]:
         })
 
     # 2. Degrees Conferred
+    if progress_callback:
+        progress_callback(1, 4, "Cross-checking 2/4: Degrees Conferred (By Level & College)...")
     try:
         r2 = cross_verify_degrees(timeout=timeout)
         results.append(r2)
+        if progress_callback:
+            progress_callback(2, 4, f"Verified 2/4: Degrees Conferred ({r2.get('matching_cells_count', 0)}/{r2.get('total_cells_verified', 0)} cells matched)")
     except Exception as e:
         results.append({
             "id": "degrees_conferred",
@@ -777,9 +785,13 @@ def run_common_cross_suite(timeout: int = 45) -> Dict[str, Any]:
         })
 
     # 3. 1-Year Retention
+    if progress_callback:
+        progress_callback(2, 4, "Cross-checking 3/4: 1-Year Cohort Retention Rates...")
     try:
         r3 = cross_verify_retention(timeout=timeout)
         results.append(r3)
+        if progress_callback:
+            progress_callback(3, 4, f"Verified 3/4: 1-Year Retention ({r3.get('matching_cells_count', 0)}/{r3.get('total_cells_verified', 0)} cells matched)")
     except Exception as e:
         results.append({
             "id": "retention_rates_1yr",
@@ -790,9 +802,13 @@ def run_common_cross_suite(timeout: int = 45) -> Dict[str, Any]:
         })
 
     # 4. 4-Year Graduation
+    if progress_callback:
+        progress_callback(3, 4, "Cross-checking 4/4: 4-Year College Graduation Rates...")
     try:
         r4 = cross_verify_graduation(timeout=timeout)
         results.append(r4)
+        if progress_callback:
+            progress_callback(4, 4, f"Verified 4/4: 4-Year Graduation ({r4.get('matching_cells_count', 0)}/{r4.get('total_cells_verified', 0)} cells matched)")
     except Exception as e:
         results.append({
             "id": "graduation_rates_4yr",

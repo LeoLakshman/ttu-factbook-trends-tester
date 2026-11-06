@@ -605,7 +605,7 @@ def test_trends_page_exhaustive(trends_info: Dict[str, Any], max_colleges: Optio
     return audit
 
 
-def run_exhaustive_suite(max_workers: int = 8, fb_term_limit: Optional[int] = None, trends_college_limit: Optional[int] = None, quick_pages_only: bool = False, scope: str = "all") -> Dict[str, Any]:
+def run_exhaustive_suite(max_workers: int = 8, fb_term_limit: Optional[int] = None, trends_college_limit: Optional[int] = None, quick_pages_only: bool = False, scope: str = "all", progress_callback: Optional[Any] = None) -> Dict[str, Any]:
     """
     Runs the exhaustive combinatorial audit across FactBook and/or Trends.
     scope: 'all' | 'factbook' | 'trends'
@@ -642,20 +642,42 @@ def run_exhaustive_suite(max_workers: int = 8, fb_term_limit: Optional[int] = No
 
     console.print(f"[bold cyan]Starting Exhaustive Audit (Scope: {scope})[/bold cyan]")
 
+    total_tasks = 0
+    if scope in ("all", "factbook"):
+        total_tasks += len(fb_pages)
+    if scope in ("all", "trends"):
+        total_tasks += len(TRENDS_PAGES)
+    completed_tasks = 0
+
     # 1. FactBook Concurrent Execution
     if scope in ("all", "factbook"):
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             fb_futures = {executor.submit(test_factbook_page_exhaustive, p, fb_term_limit): p for p in fb_pages}
             for future in as_completed(fb_futures):
                 p = fb_futures[future]
+                completed_tasks += 1
                 try:
                     res = future.result()
                     overall_report["factbook_results"].append(res)
                     overall_report["summary"]["total_permutations_tested"] += res["permutations_tested"]
                     status_color = "green" if res["status"] == "HEALTHY" else "red"
                     console.print(f"[{status_color}]FactBook: {res['title'][:35]}[/{status_color}] | Terms: {res['terms_tested_count']}/{res['total_terms_found']} | Faults: {len(res['faults'])}")
+                    if progress_callback:
+                        progress_callback(
+                            completed_tasks,
+                            total_tasks,
+                            f"FactBook: {res['title'][:32]} ({res['terms_tested_count']} terms, {res['permutations_tested']} checks, {len(res['faults'])} faults)",
+                            res
+                        )
                 except Exception as e:
                     console.print(f"[red]Error on {p.get('title')}: {e}[/red]")
+                    if progress_callback:
+                        progress_callback(
+                            completed_tasks,
+                            total_tasks,
+                            f"FactBook: Error on {p.get('title', 'Page')}: {e}",
+                            None
+                        )
 
     # 2. Trends Concurrent Execution
     if scope in ("all", "trends"):
@@ -663,14 +685,29 @@ def run_exhaustive_suite(max_workers: int = 8, fb_term_limit: Optional[int] = No
             tr_futures = {executor.submit(test_trends_page_exhaustive, tp, trends_college_limit): tp for tp in TRENDS_PAGES}
             for future in as_completed(tr_futures):
                 tp = tr_futures[future]
+                completed_tasks += 1
                 try:
                     res = future.result()
                     overall_report["trends_results"].append(res)
                     overall_report["summary"]["total_permutations_tested"] += res["permutations_tested"]
                     status_color = "green" if res["status"] == "HEALTHY" else "red"
                     console.print(f"[{status_color}]Trends: {res['title'][:35]}[/{status_color}] | Combos: {len(res['combinations_summary'])} | Faults: {len(res['faults'])}")
+                    if progress_callback:
+                        progress_callback(
+                            completed_tasks,
+                            total_tasks,
+                            f"Trends: {res['title'][:32]} ({len(res['combinations_summary'])} combos, {res['permutations_tested']} checks, {len(res['faults'])} faults)",
+                            res
+                        )
                 except Exception as e:
                     console.print(f"[red]Error on {tp.get('title')}: {e}[/red]")
+                    if progress_callback:
+                        progress_callback(
+                            completed_tasks,
+                            total_tasks,
+                            f"Trends: Error on {tp.get('title', 'Page')}: {e}",
+                            None
+                        )
 
     # Summaries
     fb_res = overall_report["factbook_results"]
