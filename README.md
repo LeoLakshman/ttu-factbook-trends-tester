@@ -7,7 +7,7 @@ A production-grade automated testing suite and live interactive dashboard for **
 
 ## 🌐 Public Live Dashboard
 
-* **Live Public URL**: **[https://48267260022ee8.lhr.life](https://48267260022ee8.lhr.life)**
+* **Live Public URL**: **https://ttu-factbook-trends-quality-center.onrender.com(https://ttu-factbook-trends-quality-center.onrender.com)**
 * **Local Server URL**: `http://localhost:5050`
 
 Whenever you refresh or click **"🚀 Start Audit"**, tests execute live against the TTU servers, streaming live progress and updating error flags.
